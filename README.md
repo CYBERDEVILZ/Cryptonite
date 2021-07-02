@@ -1,6 +1,6 @@
 # CRYPTONITE
 
-![fakurian-design-dgrcevUROak-unsplash](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
+![Cryptonite](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
 
 ## Fully functional ransomware that uses minimum resources to give maximum output
 
