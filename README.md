@@ -1,4 +1,4 @@
-# CRYPTONITE
+# CRYPTONITE - A Ransomware under development
 
 ![Cryptonite](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
 
