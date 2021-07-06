@@ -1,5 +1,4 @@
 [![GitHub license](https://img.shields.io/github/license/CYBERDEVILZ/Cryptonite)](https://github.com/CYBERDEVILZ/Cryptonite/blob/main/LICENSE)   
-[![GitHub forks](https://img.shields.io/github/forks/CYBERDEVILZ/Cryptonite)](https://github.com/CYBERDEVILZ/Cryptonite/network)
 
 # CRYPTONITE - A Ransomware under development
 
