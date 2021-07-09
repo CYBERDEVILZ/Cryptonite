@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/CYBERDEVILZ/Cryptonite)](https://github.com/CYBERDEVILZ/Cryptonite/blob/main/LICENSE)   
+[![GitHub license](https://img.shields.io/github/license/CYBERDEVILZ/Cryptonite)](https://github.com/CYBERDEVILZ/Cryptonite/blob/main/LICENSE.txt)
 
 # CRYPTONITE - A Ransomware under development
 
