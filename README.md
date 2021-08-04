@@ -16,6 +16,13 @@
 - [ ] Create Windows Defender bypass script
 
 ---
+# SEE CRYPTONITE IN ACTION
+
+https://user-images.githubusercontent.com/55954313/128112200-e2b5a676-6c99-43fd-b5e2-d5d5229e6410.mp4
+
+
+
+---
 
 # LEARN TO USE CRYPTONITE   
 Cryptonite was developed with a motive of achieving maximum output with minimum efforts. Anyone can learn to use Cryptonite. The below steps will guide you to use Cryptonite properly:-
@@ -77,6 +84,6 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 
 ## 5. THAT'S IT.
 
-Now we need to create an executable of this file and send it to the victim. This part is still under development. I will release the video tutorial SOON!
+Now we need to create an executable of this file and send it to the victim. This part is still under development.
 
 # COMING SOON ... 
