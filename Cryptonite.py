@@ -16,6 +16,7 @@ key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
+print(dkrpt)
 
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
