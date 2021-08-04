@@ -86,7 +86,7 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 
 ## 5. TEST IT ON YOUR COMPUTER
 
-Believe me when I say this... You can safely test this Ransomware on your device provided you mention the correct path to the folder you are testing on. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute cryptonite.py and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/6f85414d61f546df41840e3a3a45798b5061e3b5/Cryptonite.py#L55)
+Believe me when I say this... You can safely test this Ransomware on your device provided you mention the correct path to the folder you are testing on. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute cryptonite.py and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/13d62a703129220144cdcd66627e309f7dfece31/Cryptonite.py#L94)
 
 Points to note...
 
