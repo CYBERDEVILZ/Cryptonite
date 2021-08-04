@@ -1,6 +1,6 @@
 [![GitHub license](https://img.shields.io/github/license/CYBERDEVILZ/Cryptonite?style=plastic)](https://github.com/CYBERDEVILZ/Cryptonite/blob/main/LICENSE.txt)
 
-# CRYPTONITE - A Ransomware under development
+# CRYPTONITE - A ransomware developed using Python
 
 ![Cryptonite](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
 
