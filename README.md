@@ -1,4 +1,5 @@
-[![GitHub license](https://img.shields.io/github/license/CYBERDEVILZ/Cryptonite?style=plastic)](https://github.com/CYBERDEVILZ/Cryptonite/blob/main/LICENSE.txt)
+![MIT License](https://img.shields.io/github/license/CYBERDEVILZ/CRYPTONITE) ![Issues](https://img.shields.io/github/issues/CYBERDEVILZ/CRYPTONITE?color=cyan) ![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
+![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) ![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
 
 # CRYPTONITE - A ransomware developed using Python
 
