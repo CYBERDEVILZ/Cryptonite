@@ -23,8 +23,6 @@
 
 https://user-images.githubusercontent.com/55954313/128112200-e2b5a676-6c99-43fd-b5e2-d5d5229e6410.mp4
 
-
-
 ---
 
 # LEARN TO USE CRYPTONITE   
@@ -83,16 +81,20 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
   * [Bitcoin Wallet](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L25)
   * [Email](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L26)
   * [Custom Extension (Optional)](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L27)
+  * [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) ( Which folder you want to encrypt? Change **./testfolder** to **/** for full system wide file encryption )
   
 * Save Cryptonite.py
 
 ## 5. TEST IT ON YOUR COMPUTER
+        
+Believe me when I say this... You can **safely test** this Ransomware on your device provided you **mention the correct path to the folder you are testing on**. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute cryptonite.py and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/13d62a703129220144cdcd66627e309f7dfece31/Cryptonite.py#L94)
+   
+ ## ⚠️ Do not give the base folder (/) for testing purposes!
+ Never give the base folder for testing pupose as it will initiate the encryption of all the files (except the files inside these [folders](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L34)). Please refrain from using the base folder unless you are absolutely sure of what you are doing. To be on the safer side, I have already ceated a **testfolder** and set the default value of the Encryption Folder Path to **testfolder**. Therefore, even if you accidentally run this Ransomware, it will only encrypt the **testfolder** and not the entire system.   
 
-Believe me when I say this... You can safely test this Ransomware on your device provided you mention the correct path to the folder you are testing on. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute cryptonite.py and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/13d62a703129220144cdcd66627e309f7dfece31/Cryptonite.py#L94)
+## Points to note...
 
-Points to note...
-
-* When you execute cryptonite.py, go to the server.py terminal and lookout whether you received POST request from your localhost. If yes then the NGROK configuration was successful.
+* When you execute cryptonite.py, go to the server.py terminal and lookout whether you received POST request from your localhost. If yes then the NGROK configuration was successful.   
 * The decryption key will be shown to the terminal for a moment while the encryption is happening in the backend. I did this, in case you don't have a network connection, then you can directly copy and paste the decryption key into the message box that appears later requesting for a decryption key to decrypt the files. But remember, the decryption key will be shown for a short period of time. So make sure you are quick. If you don't want to show the decryption key, then you can delete the print statement here... [don't show decryption key](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L18)
 * You can retrieve the information about the victims via executing the retrieveinfo.py file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
 
