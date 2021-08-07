@@ -82,8 +82,8 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
   * [Bitcoin Amount](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L24)
   * [Bitcoin Wallet](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L25)
   * [Email](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L26)
-  * [Custom Extension](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L27)(Optional)
-  * [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) ( Which folder you want to encrypt? Change **./testfolder** to **/** for full system wide file encryption )
+  * [Custom Extension](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L27) (Optional)
+  * [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) (Which folder you want to encrypt? Change **./testfolder** to **/** for full system wide file encryption)
   
 * Save **Cryptonite.py**
 
