@@ -109,7 +109,7 @@ After we have tested our Ransomware, we intend to send it to the victims in the 
 ### Things to consider before sending the exe file
 * Make sure that the [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) is changed from **./testfolder** to **/** (if you are going for system wide encryption) or any folder path of your choice.
 * All the Details should be correctly filled.
-* **NGROK** and the **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown repeatedly).   
+* **NGROK** and the **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
    
 ## 6. RETRIEVE INFO FROM THE DATABASE
 
