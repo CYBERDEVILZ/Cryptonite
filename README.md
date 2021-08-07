@@ -14,10 +14,10 @@
 - [x] Pop up box should appear after encryption asking for ransom
 - [x] Create a server to retrieve information sent by the victim
 - [x] Add custom extension to encrypted files
+- [x] Generate an exe file to be sent to victims
 - [ ] Create Windows Defender bypass script
 - [ ] Custom Encryption Property
 - [ ] Graphical User Interface
-- [ ] Generate an exe file to be sent to victims
 
 ---
 # SEE CRYPTONITE IN ACTION
