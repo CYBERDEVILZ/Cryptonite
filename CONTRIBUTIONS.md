@@ -25,7 +25,7 @@ Here are some resources for you to get started:
 1. [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 2. [Markdown Lab](https://www.markdowntutorial.com/)
 
-## GitHub Workflowee
+## GitHub Workflow
 
 You are free to choose your style of workflow as far as you are not making a PR from the main branch of your fork. This is not recommended and would create some problems while syncing your fork with the upstream repository.
 
@@ -37,7 +37,7 @@ For beginners, here's what you'd have to do:
 4. Create a branch in your local machine: `git checkout -b <branchname>`
 5. Make changes/commits to this branch
 6. Push changes to your fork: `git push origin <branchname>`
-1998. Open a PR from your fork to Cryptonite main branch
+7. Open a PR from your fork to Cryptonite main branch
 
 ## Commit Ettiquette
 
