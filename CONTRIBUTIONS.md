@@ -37,7 +37,7 @@ For beginners, here's what you'd have to do:
 4. Create a branch in your local machine: `git checkout -b <branchname>`
 5. Make changes/commits to this branch
 6. Push changes to your fork: `git push origin <branchname>`
-5. Open a PR from your fork to Cryptonite main branch
+8. Open a PR from your fork to Cryptonite main branch
 
 ## Commit Ettiquette
 
