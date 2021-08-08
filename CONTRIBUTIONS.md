@@ -33,11 +33,10 @@ For beginners, here's what you'd have to do:
 
 1. Fork the Project
 2. Clone your fork to your local machine via `git clone https://github.com/YOUR_USERNAME/Cryptonite.git`
-3. Add a remote to the upstream by: `git remote add upstream https://github.com/CYBERDEVILZ/Cryptonite.git`
-4. Create a branch in your local machine: `git checkout -b <branchname>`
-5. Make changes/commits to this branch
-6. Push changes to your fork: `git push origin <branchname>`
-7. Open a PR from your fork to Cryptonite main branch
+3. Create a branch in your local machine: `git checkout -b <branchname>`
+4. Make changes/commits to this branch
+5. Push changes to your fork: `git push origin <branchname>`
+6. Open a PR from your fork to Cryptonite main branch
 
 ## Commit Ettiquette
 
