@@ -25,7 +25,7 @@ Here are some resources for you to get started:
 1. [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 2. [Markdown Lab](https://www.markdowntutorial.com/)
 
-## GitHub Workflow
+## GitHub Workflowee
 
 You are free to choose your style of workflow as far as you are not making a PR from the main branch of your fork. This is not recommended and would create some problems while syncing your fork with the upstream repository.
 
