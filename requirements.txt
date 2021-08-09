@@ -3,4 +3,3 @@ requests
 tqdm
 pyinstaller
 pymsgbox
-pywin32
