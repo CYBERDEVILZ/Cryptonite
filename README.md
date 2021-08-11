@@ -131,6 +131,4 @@ The information sent is stored in the database **Details.db**. In order to retri
 
 # MORE FEATURES COMING SOON ... 
 
-I recently added a Windows Bypass script, so expect a video showcasing that very soon :)
-
 ---
