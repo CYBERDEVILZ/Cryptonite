@@ -1,7 +1,7 @@
 ![MIT License](https://img.shields.io/github/license/CYBERDEVILZ/CRYPTONITE) ![Issues](https://img.shields.io/github/issues/CYBERDEVILZ/CRYPTONITE?color=cyan) ![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
 ![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) ![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
 
-# CRYPTONITE - A Community Driven Ransomware developed using Python
+# CRYPTONITE - A Ransomware developed using Python
 
 ![Cryptonite](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
 
@@ -27,7 +27,9 @@ https://user-images.githubusercontent.com/55954313/128112200-e2b5a676-6c99-43fd-
 ---
 
 # LEARN TO USE CRYPTONITE   
-**Cryptonite** was developed with a motive of achieving maximum output with minimum efforts. Anyone can learn to use **Cryptonite**. The below steps will guide you to use **Cryptonite** properly:-
+**Cryptonite** was developed with a motive of achieving maximum output with minimum efforts. Anyone can learn to use **Cryptonite**. I have included **two versions** of **Cryptonite**. One that stores data using **Sqlite3** and the other that uses **Mongo DB Atlas** to push the results into the cloud. Default method is to use **Sqlite3**, but if you are interested in using the **Mongo DB** version of **Cryptonite** then switch to the **mongo** branch of this repository.   
+   
+The below steps will guide you to use **Cryptonite** in detail (subjected to change as I add new concepts):-
 
 ## 1. SETTING UP FOR THE FIRST TIME
 
