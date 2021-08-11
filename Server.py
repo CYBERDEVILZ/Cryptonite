@@ -2,6 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import mysql.connector
 import sqlite3
 
+
 connection = sqlite3.connect("Details.db")  
 
 def createTable(connection):
