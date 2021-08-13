@@ -3,3 +3,4 @@ requests
 tqdm
 pyinstaller
 pymsgbox
+pymongo[srv]
