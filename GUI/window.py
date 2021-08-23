@@ -1,8 +1,9 @@
 import tkinter as tk
 
-window =  tk.Tk()   # creates a an instance of Tk() class (pops up a window)
+window =  tk.Tk()                                           # creates a an instance of Tk() class (pops up a responsive window)
 
-greeting = tk.Label(text="Hello there, Welcome to tkinterlkfjsldfjlksjdflksajflksjflkasjflksajflksjflksajflkajslfksdaj")
-greeting.pack()
+greeting = tk.Label(text="Hello there, Welcome to tkinter") # creates a label
+greeting.pack()                                             # adds it to the window
 
-window.mainloop()   # makes the window stay on the screen (runs the window event loop)
+
+window.mainloop()                                           # runs the event loop and it listens for events.
