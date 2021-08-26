@@ -15,8 +15,10 @@
 - [x] Create a server to retrieve information sent by the victim
 - [x] Add custom extension to encrypted files
 - [x] Generate an exe file to be sent to victims
+- [x] Graphical User Interface (Victim side)
+- [ ] Graphical User Interface (Attacker side)
 - [ ] Create Windows Defender bypass script
-- [ ] Graphical User Interface
+
 
 ---
 # SEE CRYPTONITE IN ACTION
