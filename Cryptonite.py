@@ -169,12 +169,17 @@ class System(Cryptonite):
             decryption_key.delete("0", tk.END)
 
         def key_collect():
-            key = int(decryption_key.get())
-            if int(key) == self.decryptPlease:
-                self.decrypt()
-                window.destroy()
-            else:
-                pmb.confirm("\t\tWrong KEY!\t\tGoodBye :)", buttons=['OK'])
+            try:
+                key = int(decryption_key.get())
+                if int(key) == self.decryptPlease:
+                    self.decrypt()
+                    window.destroy()
+                else:
+                    pmb.confirm("Wrong KEY!\tGoodBye :)", buttons=['OK'])
+                    window.destroy()
+                    exit()
+            except:
+                pmb.confirm("Wrong KEY!\tGoodBye :)", buttons=['OK'])
                 window.destroy()
                 exit()
 
