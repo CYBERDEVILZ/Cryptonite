@@ -35,7 +35,7 @@ class Server(BaseHTTPRequestHandler):
         self.send_response(200, "Connected Successfully")
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(b"hello world!")
+        self.wfile.write(b"Connection Accepted!")
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
