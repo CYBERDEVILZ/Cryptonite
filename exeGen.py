@@ -38,8 +38,8 @@ def generate():
     FILE = name_entry.get()
     if not FILE:
         return
-    # generate_btn.state(["disabled"])
-    # generate_btn.config(text = "Generating..")
+    generate_btn.state(["disabled"])
+    generate_btn.config(text = "Generating..")
     # os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
     # if OS == "nt":
     #     os.system(f"MOVE /Y \"{PATH}\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
@@ -50,6 +50,7 @@ def generate():
     #     os.system(f"rm -r dist")
     #     os.system(f"{FILE}.spec")
     generate_btn.config(text = "Done!")
+
 
 window = tk.Tk()
 window.rowconfigure([0,1,2,3,4,5,6], minsize = 30, weight = 0)
