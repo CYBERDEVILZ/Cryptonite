@@ -105,10 +105,11 @@ email.grid(row = 5, column = 0, sticky = "e", pady = 20, padx = 15)
 email_entry = tk.Entry(window, font = ("arial", 15))
 email_entry.grid(row = 5, column = 1, sticky = "w", pady = 20, padx = 15)
 
-ext = tk.Label(master = window, text = "EXTENSION (default is .cryptn8): ", font = ("arial", 15))
+ext = tk.Label(master = window, text = "EXTENSION: ", font = ("arial", 15))
 ext.grid(row = 6, column = 0, sticky = "e", pady = 20, padx = 15)
 ext_entry = tk.Entry(window, font = ("arial", 15))
 ext_entry.grid(row = 6, column = 1, sticky = "w", pady = 20, padx = 15)
+ext_entry.insert("0", ".cryptn8")
 
 ext = tk.Label(master = window, text = "", font = ("arial", 15))
 ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
