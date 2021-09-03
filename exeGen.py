@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.filedialog import askdirectory
 import json
+from PIL import Image, ImageTk
+
 folder = None
 
 def selectfolder():
@@ -53,6 +55,7 @@ def generate():
 
 
 window = tk.Tk()
+window.config(bg="white")
 window.rowconfigure([0,1,2,3,4,5,6], minsize = 30, weight = 0)
 window.rowconfigure([8], minsize = 100, weight = 1)
 window.resizable(0,0)
@@ -63,8 +66,18 @@ s = ttk.Style()
 s.configure("TButton", font = (("arial", 12)))
 s.configure("W.TButton", font = (("arial", 24)))
 
-title = tk.Label(master = window, text = "exeGen: Official exe generator for Cryptonite", font = ("arial", 30))
-title.grid(row = 0, column = 0, columnspan = 2, pady = (20, 40), padx = 15)
+# images
+image0 = Image.open("exegen.png")
+image0 = image0.resize((round(image0.size[0]*0.5),round(image0.size[1]*0.5)))
+image0 = ImageTk.PhotoImage(image0)
+
+image1 = Image.open("generatebutton.png")
+image1 = image1.resize((round(image1.size[0]*0.7),round(image1.size[1]*0.7)))
+image1 = ImageTk.PhotoImage(image1)
+
+
+title = tk.Label(master = window, image = image0, bg = "black")
+title.grid(row = 0, column = 0, columnspan = 2, pady = (20, 30), padx = 15)
 
 name = tk.Label(master = window, text = "NAME (for executable file): ", font = ("arial", 15))
 name.grid(row = 1, column = 0, sticky = "e", pady = 20, padx = 15)
@@ -97,12 +110,12 @@ ext_entry = tk.Entry(window, font = ("arial", 15))
 ext_entry.grid(row = 6, column = 1, sticky = "w", pady = 20, padx = 15)
 
 ext = tk.Label(master = window, text = "", font = ("arial", 15))
-ext.grid(row = 7, column = 0, sticky = "e", pady = 20, padx = 15)
+ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
 
 filesave = ttk.Button(master = window, style = "TButton", text = f"Select where to save exe file", command = selectfolder)
 filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20)
 
-generate_btn = ttk.Button(master = window, style = "W.TButton", text = "Generate exe file", command = generate)
+generate_btn = tk.Button(master = window, image = image1, command = generate, borderwidth = 0)
 generate_btn.grid(row = 9, column = 0, columnspan = 2, pady = (10, 30))
 
 window.mainloop()
