@@ -1,7 +1,5 @@
 # imports
 
-import subprocess
-import sys
 import os
 from cryptography.fernet import Fernet
 import random
