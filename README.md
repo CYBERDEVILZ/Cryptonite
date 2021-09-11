@@ -14,7 +14,7 @@
 - [x] Pop up box should appear after encryption asking for ransom
 - [x] Create a server to retrieve information sent by the victim
 - [x] Add custom extension to encrypted files
-- [x] Generate an exe file to be sent to victims
+- [x] Create an exe file generator
 - [x] Graphical User Interface (Victim side)
 - [ ] Graphical User Interface (Attacker side)
 - [ ] Create Windows Defender bypass script
