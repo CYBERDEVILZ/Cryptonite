@@ -8,7 +8,6 @@ import time
 import requests as r
 import json
 import tqdm
-import pymsgbox._native_win as pymsgbox
 import pymsgbox as pmb
 
 
