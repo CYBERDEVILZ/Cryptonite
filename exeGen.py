@@ -1,7 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
 from tkinter.filedialog import askdirectory
-import json
 from PIL import Image, ImageTk
 
 folder = None
