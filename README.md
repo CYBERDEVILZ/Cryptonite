@@ -23,14 +23,7 @@
 ---
 # SEE CRYPTONITE IN ACTION
 
-
-
-
-https://user-images.githubusercontent.com/55954313/131275047-1af3bf0b-a3b4-4204-9d13-1a2192c7baaf.mp4
-
-
-
-
+https://user-images.githubusercontent.com/55954313/135764868-2f24bebd-240c-4f77-9597-050f15067a31.mp4
 
 ---
 
