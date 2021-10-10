@@ -4,3 +4,6 @@ tqdm
 pyinstaller
 pymsgbox
 pre-commit
+dash
+plotly
+dash_daq

