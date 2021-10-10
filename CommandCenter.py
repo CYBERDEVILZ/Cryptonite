@@ -45,7 +45,7 @@ mapbox_access_token = open(".map_token").read()
 count = len(ip) 
 
 # INITIATE THE DASH APP
-app = dash.Dash()
+app = dash.Dash(title="COMMAND CENTER")
 
 # COLORS DICTIONARY
 colors = {
