@@ -660,4 +660,4 @@ def update_map(n_clicks_submit, n_clicks_delete, n_clicks_reload, value, count_v
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
