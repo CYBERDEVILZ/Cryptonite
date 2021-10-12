@@ -16,7 +16,7 @@
 - [x] Add custom extension to encrypted files
 - [x] Create an exe file generator
 - [x] Graphical User Interface (Victim side)
-- [ ] Graphical User Interface (Attacker side)
+- [x] Graphical User Interface (Attacker side)
 - [ ] Create Windows Defender bypass script
 
 
