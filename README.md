@@ -1,7 +1,7 @@
 ![MIT License](https://img.shields.io/github/license/CYBERDEVILZ/CRYPTONITE) ![Issues](https://img.shields.io/github/issues/CYBERDEVILZ/CRYPTONITE?color=cyan) ![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
 ![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) ![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
 
-# CRYPTONITE - A Ransomware developed using Python
+# CRYPTONITE - A Ransomware for Windows OS
 
 ![Cryptonite](https://user-images.githubusercontent.com/55954313/123502409-c500b480-d669-11eb-977b-4e9ac5c327fa.jpg)
 
@@ -16,7 +16,7 @@
 - [x] Add custom extension to encrypted files
 - [x] Create an exe file generator
 - [x] Graphical User Interface (Victim side)
-- [ ] Graphical User Interface (Attacker side)
+- [x] Graphical User Interface (Attacker side)
 - [ ] Create Windows Defender bypass script
 
 
@@ -107,22 +107,14 @@ Remember, creating an exe will take quite a long time (upto five minutes!), henc
 * All the Details should be correctly filled.
 * **NGROK** and the **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
    
-## 6. ⏬ RETRIEVE INFO FROM THE DATABASE ⏬
+# 🚀 CRYPTONITE COMMAND CENTER 🚀
 
-If a victim falls prey to **Cryptonite**, a **POST request** carrying his info will be sent from his device to our local server (**Server.py**). Check the terminal of **Server.py** to see if any victim has sent his information to us. When **Cryptonite** sends the info to our server, the terminal of **Server.py** looks like this:- 
 
-![server-post](https://user-images.githubusercontent.com/55954313/128585714-b6779259-78ed-4b36-b149-50aa7d89c5fe.png)   
-   
-The same can be noted in the terminal running **NGROK** tunnel:-
+https://user-images.githubusercontent.com/55954313/136694138-6aec2389-4310-4a69-86aa-0f4dd9ee10ef.mp4
 
-![image](https://user-images.githubusercontent.com/55954313/128585800-f071af55-2aab-4e1b-b59e-eb848c26a3aa.png)
-   
-The information sent is stored in the database **Details.db**. In order to retrieve the information, run **retrieveinfo.py** by typing ```python retrieveinfo.py``` in a new terminal in the same directory. This will give you the **UniqueKey, Username, DecryptionKey, IP address** of the victim in the same order within a list:-
 
-![info-retrieval](https://user-images.githubusercontent.com/55954313/128585920-8e2a9434-9f7a-4da9-bc8b-411d61e9f4e6.png)
+An all in one **monitoring dashboard** created to understand the **level of destruction** caused by this ransomware. The attacker can get to know the location of his victims plotted on a map with high precision. His IP address, hostname, place and other information are stored in a database and presented to the attacker in a neat table. Search and delete functionality has also been added. Grab a cup of coffee and sip on it while **Cryptonite** does all the hard work.
 
----
-
-# MORE FEATURES COMING SOON ... 
-
----
+## 📓 Points to note...
+* The Cryptonite Command Center can be accessed by running the **CommandCenter.py** file.
+* Always use the inbuilt **RELOAD** button to reload the Command Center in case the values don't match up.
