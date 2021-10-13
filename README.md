@@ -82,7 +82,7 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 ## 4. 📝 FILLING UP THE DETAILS
 
 * Run **exeGen.py** and fill up the necessary details.
-* By default the Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire folder structure, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
+* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire folder structure, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
 * Running **exeGen.py** will create an **exe** file that can be shipped to the victim.
 
 ## 5. 🆗 TEST IT ON YOUR COMPUTER 🆗
