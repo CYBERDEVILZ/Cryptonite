@@ -7,7 +7,7 @@
 
 ## Fully functional ransomware that uses minimum resources to give maximum output
 
-## ✔️ TASK LIST ✔️
+## TASK LIST ✔️
 - [x] Encrypt all files except system specific ones
 - [x] Encrytion must only be decrypted with a special key
 - [x] Send the credentials of the victim to the attacker via secure tunnel, preferably **NGROK**
@@ -21,18 +21,18 @@
 
 
 ---
-# SEE CRYPTONITE IN ACTION
+# ☢️ SEE CRYPTONITE IN ACTION ☢️
 
 https://user-images.githubusercontent.com/55954313/135764868-2f24bebd-240c-4f77-9597-050f15067a31.mp4
 
 ---
 
-# LEARN TO USE CRYPTONITE   
+# 📚 LEARN TO USE CRYPTONITE 📚
 **Cryptonite** was developed with a motive of achieving maximum output with minimum efforts. Anyone can learn to use **Cryptonite**. I have included **two versions** of **Cryptonite**. One that stores data using **Sqlite3** and the other that uses **Mongo DB Atlas** to push the results into the cloud. Default method is to use **Sqlite3**, but if you are interested in using the **Mongo DB** version of **Cryptonite** then switch to the **mongo** branch of this repository.   
    
 The below steps will guide you to use **Cryptonite** in detail (subjected to change as I add new concepts):-
 
-## 1. 🍼 SETTING UP FOR THE FIRST TIME
+## 1. SETTING UP FOR THE FIRST TIME 🍼
 
 The following setups need to be done if you are using **Cryptonite** for the first time.
 
@@ -46,10 +46,11 @@ The following setups need to be done if you are using **Cryptonite** for the fir
      ![image](https://user-images.githubusercontent.com/55954313/124344516-533be400-dbf0-11eb-9d8f-ff745a510e3e.png)
 
 * Unzip and install **NGROK**.
-  * For Linux / MAC users, unzip the folder via terminal:-   
-  
-        unzip /path/to/ngrok.zip
-  * For Windows users, just unzip the folder and run the exe file   
+  * For Linux / MAC users, unzip the folder via terminal: `unzip /path/to/ngrok.zip`.
+  * For Windows users, just unzip the folder
+  * Make sure to add ngrok to **PATH**
+   
+
 * Authenticate your **NGROK**:-   
   * Copy your AUTH TOKEN from [NGROK SETUP PAGE](https://dashboard.ngrok.com/get-started/your-authtoken)
   * For windows users, open cmd and type (replace `YOUR_AUTH_TOKEN_HERE` with your authtoken):-   
@@ -63,12 +64,12 @@ The following setups need to be done if you are using **Cryptonite** for the fir
 
     pip install -r "requirements.txt"  
 
-## 2. 🔥 FIRING UP THE SERVER! 🔥
+## 2. FIRING UP THE SERVER! 🔥
 Run the **Server.py** file before you send the ransomware to victims. Make sure that **Server.py** runs all the time. Running the server also creates a **DB file** to store the victims' info.   
 
 We will be running the Server on port 8000 of our localhost. Hence we need to perform port forwarding using **NGROK** to receive the credentials of our victims sent by our Ransomware. That will be our next step.
 
-## 3. PORT FORWARDING USING NGROK
+## 3. PORT FORWARDING USING NGROK 🚪
 
 * Run **NGROK** on port 8000:-   
      
@@ -79,13 +80,13 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 * Copy the url and add the link [here](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L23). 
 * DO NOT CLOSE THE TERMINAL OR ELSE THE PORT FORWARDING WILL STOP
 
-## 4. 📝 FILLING UP THE DETAILS
+## 4. FILLING UP THE DETAILS 📝
 
 * Run **exeGen.py** and fill up the necessary details.
-* By default the Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire folder structure, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
+* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire folder structure, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
 * Running **exeGen.py** will create an **exe** file that can be shipped to the victim.
 
-## 5. 🆗 TEST IT ON YOUR COMPUTER 🆗
+## 5. TEST IT ON YOUR COMPUTER 🆗
         
 Believe me when I say this... You can **safely test** this Ransomware on your device provided you **mention the correct path to the folder you are testing on**. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute **Cryptonite.py** and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/13d62a703129220144cdcd66627e309f7dfece31/Cryptonite.py#L94)
    
@@ -97,7 +98,7 @@ Believe me when I say this... You can **safely test** this Ransomware on your de
 * When you execute **Cryptonite.py**, go to the **Server.py** terminal and lookout whether you received **POST** request. If yes then the **NGROK** configuration was successful.   
 * You can retrieve the information about the victims via executing the **retrieveinfo.py** file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
 
-## 6. 📬 SEND IT TO YOUR VICTIMS
+## 6. SEND IT TO YOUR VICTIMS 📬
 After we have tested our Ransomware, we intend to send it to the victims in the form of an **exe** file. I have created a python script **exeGen.py** that will generate an **exe** file of custom name. By default the name would be **WindowsUpdate.exe**. But you can change it anytime you want using **exeGen.py**.   
    
 Remember, creating an exe will take quite a long time (upto five minutes!), hence chill and wait out the process and **do not close exeGen.py during exe file generation**. exeGen will automatically close itself after the exe file has been generated.
