@@ -46,10 +46,11 @@ The following setups need to be done if you are using **Cryptonite** for the fir
      ![image](https://user-images.githubusercontent.com/55954313/124344516-533be400-dbf0-11eb-9d8f-ff745a510e3e.png)
 
 * Unzip and install **NGROK**.
-  * For Linux / MAC users, unzip the folder via terminal:-   
-  
-        unzip /path/to/ngrok.zip
-  * For Windows users, just unzip the folder and run the exe file   
+  * For Linux / MAC users, unzip the folder via terminal: `unzip /path/to/ngrok.zip`.
+  * For Windows users, just unzip the folder
+  * Make sure to add ngrok to **PATH**
+   
+
 * Authenticate your **NGROK**:-   
   * Copy your AUTH TOKEN from [NGROK SETUP PAGE](https://dashboard.ngrok.com/get-started/your-authtoken)
   * For windows users, open cmd and type (replace `YOUR_AUTH_TOKEN_HERE` with your authtoken):-   
