@@ -77,8 +77,7 @@ We will be running the Server on port 8000 of our localhost. Hence we need to pe
 [Starting ngrok on 8000](https://user-images.githubusercontent.com/55954313/124347475-a6b72d80-dc02-11eb-9d85-d8e5d0a79f08.mp4)
 
 
-* Copy the url and add the link [here](https://github.com/CYBERDEVILZ/Cryptonite/blob/190b55fee5e767af86b789b19e1a2ea47a6acaca/Cryptonite.py#L23). 
-* DO NOT CLOSE THE TERMINAL OR ELSE THE PORT FORWARDING WILL STOP
+* **DO NOT CLOSE THE TERMINAL OR ELSE THE PORT FORWARDING WILL STOP**
 
 ## 4. FILLING UP THE DETAILS 📝
 
