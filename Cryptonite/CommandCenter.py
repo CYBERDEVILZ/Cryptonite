@@ -7,7 +7,7 @@ from dash import Input, Output, State, callback_context
 import dash_daq as daq
 
 import pandas as pd
-import retrieveinfo
+from lib import retrieveinfo
 
 querygen = "heh"
 
