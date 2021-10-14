@@ -1,6 +1,9 @@
+import ngrok_url
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import sqlite3
 
+URL = ngrok_url.create_tunnel()
+print(f"\n\tNGROK URL: {URL}\n")
 
 connection = sqlite3.connect("Details.db")  
 
