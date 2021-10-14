@@ -1,5 +1,9 @@
-![MIT License](https://img.shields.io/github/license/CYBERDEVILZ/CRYPTONITE) ![Issues](https://img.shields.io/github/issues/CYBERDEVILZ/CRYPTONITE?color=cyan) ![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
-![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) ![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
+![MIT License](https://img.shields.io/github/license/CYBERDEVILZ/CRYPTONITE) 
+![Issues](https://img.shields.io/github/issues/CYBERDEVILZ/CRYPTONITE?color=cyan) 
+![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
+![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) 
+![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
+![](https://img.shields.io/youtube/channel/views/UC1QZPervOHLiC4xpVnzbDFg?style=social)
 
 # CRYPTONITE - A Ransomware for Windows OS
 
