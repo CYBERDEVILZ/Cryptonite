@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/languages/top/CYBERDEVILZ/CRYPTONITE)   
 ![](https://img.shields.io/github/forks/cyberdevilz/cryptonite?style=social) 
 ![](https://img.shields.io/github/stars/CYBERDEVILZ/CRYPTONITE?style=social)
-![](https://img.shields.io/youtube/channel/views/UC1QZPervOHLiC4xpVnzbDFg?style=social)
+[![](https://img.shields.io/youtube/channel/views/UC1QZPervOHLiC4xpVnzbDFg?style=social)](https://www.youtube.com/channel/UC1QZPervOHLiC4xpVnzbDFg)
 
 # CRYPTONITE - A Ransomware for Windows OS
 
