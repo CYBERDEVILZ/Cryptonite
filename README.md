@@ -69,29 +69,22 @@ The following setups need to be done if you are using **Cryptonite** for the fir
     pip install -r "requirements.txt"  
 
 ## 2. FIRING UP THE SERVER! 🔥
-Run the **Server.py** file before you send the ransomware to victims. Make sure that **Server.py** runs all the time. Running the server also creates a **DB file** to store the victims' info.   
 
-We will be running the Server on port 8000 of our localhost. Hence we need to perform port forwarding using **NGROK** to receive the credentials of our victims sent by our Ransomware. That will be our next step.
+Run the **Server.py** file before you send the ransomware to victims. The **Server.py** starts the server to receive victim's data sent by **Cryptonite** and creates an **NGROK tunnel** that performs **port forwarding** so that our server can be accessed by anyone around the world. Running **Server.py** also creates a **DB file** to store the victims' info.   
 
-## 3. PORT FORWARDING USING NGROK 🚪
+❗ Make sure that **Server.py** runs all the time.  
 
-* Run **NGROK** on port 8000:-   
-     
+Copy the **NGROK URL** generated in the terminal. It will be useful in the next step.
 
-[Starting ngrok on 8000](https://user-images.githubusercontent.com/55954313/124347475-a6b72d80-dc02-11eb-9d85-d8e5d0a79f08.mp4)
-
-
-* **DO NOT CLOSE THE TERMINAL OR ELSE THE PORT FORWARDING WILL STOP**
-
-## 4. FILLING UP THE DETAILS 📝
+## 3. FILLING UP THE DETAILS 📝
 
 * Run **exeGen.py** and fill up the necessary details.
-* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire folder structure, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
+* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire system, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
 * Running **exeGen.py** will create an **exe** file that can be shipped to the victim.
 
-## 5. TEST IT ON YOUR COMPUTER 🆗
+## 4. TEST IT ON YOUR COMPUTER 🆗
         
-Believe me when I say this... You can **safely test** this Ransomware on your device provided you **mention the correct path to the folder you are testing on**. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. Just execute **Cryptonite.py** and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder here.. [edit path](https://github.com/CYBERDEVILZ/Cryptonite/blob/13d62a703129220144cdcd66627e309f7dfece31/Cryptonite.py#L94)
+Believe me when I say this... You can **safely test** this Ransomware on your device provided you **mention the correct path to the folder you are testing on**. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. What you need to do is run **Server.py**, execute **Cryptonite.py** and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder in place of **./testfolder**
    
  ## ⚠️ ❗ Do not give the base folder (/) for testing purposes ❗ ⚠️ 
  Never give the base folder for testing pupose as it will initiate the encryption of all the files (except the files inside these [folders](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L34)). Please refrain from using the base folder unless you are absolutely sure of what you are doing. To be on the safer side, I have already ceated a **testfolder** and set the default value of the Encryption Folder Path to **testfolder**. Therefore, even if you accidentally run this Ransomware, it will only encrypt the **testfolder** and not the entire system.   
@@ -101,7 +94,7 @@ Believe me when I say this... You can **safely test** this Ransomware on your de
 * When you execute **Cryptonite.py**, go to the **Server.py** terminal and lookout whether you received **POST** request. If yes then the **NGROK** configuration was successful.   
 * You can retrieve the information about the victims via executing the **retrieveinfo.py** file. Just type ```python retrieveinfo.py``` inside a new terminal in the current directory.
 
-## 6. SEND IT TO YOUR VICTIMS 📬
+## 5. SEND IT TO YOUR VICTIMS 📬
 After we have tested our Ransomware, we intend to send it to the victims in the form of an **exe** file. I have created a python script **exeGen.py** that will generate an **exe** file of custom name. By default the name would be **WindowsUpdate.exe**. But you can change it anytime you want using **exeGen.py**.   
    
 Remember, creating an exe will take quite a long time (upto five minutes!), hence chill and wait out the process and **do not close exeGen.py during exe file generation**. exeGen will automatically close itself after the exe file has been generated.
