@@ -79,7 +79,7 @@ Copy the **NGROK URL** generated in the terminal. It will be useful in the next 
 
 * Run **exeGen.py** and fill up the necessary details.
 * **exeGen.py** will create an **exe** file that can be shipped to the victim.
-* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire system, then make sure to edit the required field by replacing **./testfolder** to **/**   
+* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** exists. But if you want to specify some different path, say the entire system, then make sure to edit the required field by replacing **./testfolder** to **/**   
    
 ### **ℹ️ INFORMATION**   
 **exeGen** will automatically close after the **exe** has been generated and saved in the folder you specified. Do not try to forcefully close it. The process of creating an **exe** might take upto **5 minutes**.
