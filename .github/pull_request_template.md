@@ -1,7 +1,7 @@
 # Select the type of PR
 - [ ] bug fix
 - [ ] feature
-- [ ] documentaion update/addition
+- [ ] documentation update/addition
 - [ ] code clean-up / corrected formatting
 - [ ] other
 
