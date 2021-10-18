@@ -75,12 +75,16 @@ Run the **Server.py** file before you send the ransomware to victims. The **Serv
 Copy the **NGROK URL** generated in the terminal. It will be useful in the next step.
 
 ## 3. FILLING UP THE DETAILS 📝
+![image](https://user-images.githubusercontent.com/55954313/137672473-13c488a8-a604-4746-a134-619ef459887d.png)   
+
 * Run **exeGen.py** and fill up the necessary details.
-* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire system, then make sure to edit [this](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) line by replacing **./testfolder** to **/** before executing **exeGen.py**. Dpn't forget to save **Cryptonite.py**.
-* Running **exeGen.py** will create an **exe** file that can be shipped to the victim.
+* **exeGen.py** will create an **exe** file that can be shipped to the victim.
+* By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire system, then make sure to edit the required field by replacing **./testfolder** to **/**   
+   
+**ℹ️ Information**   
+**exeGen** will automatically close after the **exe** has been generated and saved in the folder you specified. Do not try to forcefully close it. The process of creating an **exe** might take upto **5 minutes**.
 
 ## 4. TEST IT ON YOUR COMPUTER 🆗
-        
 Believe me when I say this... You can **safely test** this Ransomware on your device provided you **mention the correct path to the folder you are testing on**. I have already created a testing folder and the path has also been given. So its easier for you to see for yourself. What you need to do is run **Server.py**, execute **Cryptonite.py** and see the magic happen. If you wish to create your own folder and test it there, then mention the absolute path of the folder in place of **./testfolder**
    
  ## ⚠️ ❗ Do not give the base folder (/) for testing purposes ❗ ⚠️ 
