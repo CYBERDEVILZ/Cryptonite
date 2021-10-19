@@ -25,9 +25,8 @@
 
 
 ---
-# ☢️ SEE CRYPTONITE IN ACTION ☢️ (Outdated Video)
-
-https://user-images.githubusercontent.com/55954313/135764868-2f24bebd-240c-4f77-9597-050f15067a31.mp4
+# ☢️ SEE CRYPTONITE IN ACTION ☢️
+https://user-images.githubusercontent.com/55954313/137829202-ce82ea31-06cf-4522-ad52-9f787a169e46.mp4
 
 ---
 
