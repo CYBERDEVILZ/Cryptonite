@@ -74,7 +74,7 @@ figa = go.Figure(go.Scattermapbox(
             size=14,
             color='#00ffdd'
         ),
-        hovertext='<b>' + df["IP Address"] + '</b>' + '<br>' + df["Place"],
+        hovertext='<b>' + str(df["IP Address"]) + '</b>' + '<br>' + str(df["Place"]),
     ))
 
 # MAP UPDATES
