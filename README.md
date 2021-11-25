@@ -109,6 +109,6 @@ An all in one **monitoring dashboard** created to understand the **level of dest
 * Always use the inbuilt **RELOAD** button to reload the Command Center in case the values don't match up.
 
 # Support Our YouTube Channel 📺
-[![zbunkerart](https://user-images.githubusercontent.com/55954313/137255788-6b14ba33-6d3f-4c9a-9f2f-c78e088656f5.png)](https://www.youtube.com/channel/UC1QZPervOHLiC4xpVnzbDFg)
-We are almost active on [YouTube](https://www.youtube.com/channel/UC1QZPervOHLiC4xpVnzbDFg) creating courses. We are relatively new to this. **Support It. Make an Impact.**
+[![zbunkerart](https://user-images.githubusercontent.com/55954313/137255788-6b14ba33-6d3f-4c9a-9f2f-c78e088656f5.png)](https://www.youtube.com/zbunker)
+We are almost active on [YouTube](https://www.youtube.com/zbunker) creating courses. We are relatively new to this. **Support It. Make an Impact.**
 
