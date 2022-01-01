@@ -8,3 +8,4 @@ dash
 plotly
 dash_daq
 pyngrok
+pillow
