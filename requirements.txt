@@ -9,3 +9,4 @@ plotly
 dash_daq
 pyngrok
 Pillow
+pandas
